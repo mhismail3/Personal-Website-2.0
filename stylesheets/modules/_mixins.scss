@@ -1,0 +1,13 @@
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+@mixin slide-init($bg-url) {
+    background-image: url(#{$bg-url});
+    background-size: cover;
+	background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,67 @@
+@import "../modules/variables";
+@import "../modules/mixins";
+
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+%clearfix {
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    list-style: none;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    
+    @include border-box;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important; 
+}
+
+.container,
+.row {
+    @extend %clearfix;
+}
+
+[class*='grid_'] {
+    float: left;
+    padding: 1em;
+    width: 100%;
+    min-height: 1px; 
+}
+
+@media only screen and (min-width: #{$laptop-width}) {
+    .container {      
+        width: 95%;
+        max-width: $grid-max-width;
+        margin: auto;
+    }
+    @for $i from 1 through $grid-columns {      
+        .grid_#{$i} {         
+            width: 100% / $grid-columns * $i;   
+        }           
+    }   
+}
