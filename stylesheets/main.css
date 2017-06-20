@@ -111,7 +111,7 @@ img {
   flex: 1; }
 
 .navigation {
-  font-family: "Muli", sans-serif;
+  font-family: "Cabin", sans-serif;
   font-size: 1.2em;
   float: right;
   list-style: none;
@@ -144,6 +144,129 @@ body {
 .index {
   overflow: hidden; }
 
+body.index {
+  background: url(../images/sea.jpg) no-repeat center left fixed;
+  background-size: cover; }
+
+.sidenav {
+  height: 100%;
+  width: 300px;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  background-color: #fff;
+  background-image: url(../images/crossword.png);
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column; }
+  .index .sidenav {
+    width: 40%;
+    min-width: 460px;
+    background-image: none;
+    position: relative;
+    height: 100vh;
+    overflow: hidden; }
+    .index .sidenav::before {
+      width: 100%;
+      height: 100%;
+      background: url("../images/sea.jpg") no-repeat center left fixed;
+      background-size: cover;
+      transform: scale(1.02);
+      position: absolute;
+      filter: blur(4px);
+      opacity: 0.6;
+      z-index: -1;
+      content: ' '; }
+    .index .sidenav .head {
+      padding: 25px 0 0 25px; }
+    .index .sidenav .img-circle {
+      width: 40%;
+      max-width: 200px; }
+    .index .sidenav h1 {
+      font-size: 4.5em;
+      margin: 25px 25px 20px 25px; }
+    .index .sidenav .navitems {
+      font-size: 2.5em;
+      padding-top: 0; }
+      .index .sidenav .navitems a {
+        padding-left: 25px; }
+    .index .sidenav footer {
+      height: 80px;
+      color: #333;
+      background-color: transparent; }
+      .index .sidenav footer p {
+        margin-left: 25px;
+        font-size: 1.4em; }
+      .index .sidenav footer #icons {
+        margin-right: 25px; }
+  .sidenav .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px; }
+  .sidenav .head::after {
+    clear: both;
+    content: " ";
+    display: table; }
+  .sidenav .img-circle {
+    max-width: 20%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 7px #aaa; }
+  .sidenav .toflex {
+    flex: 1; }
+  .sidenav .closebtn {
+    font-size: 36px; }
+  .sidenav h1 {
+    font-family: "Lobster", cursive;
+    line-height: 1em;
+    font-size: 2.5em;
+    margin: 0 0 0 15px; }
+  .sidenav .navitems {
+    font-family: "Cabin", sans-serif;
+    font-style: bold;
+    font-size: 1.8em;
+    padding-top: 7px; }
+  .sidenav a {
+    text-decoration: none;
+    color: #515151;
+    padding: 8px 8px 8px 15px;
+    display: block;
+    transition: 0.2s; }
+    .sidenav a:hover {
+      color: #ddd;
+      background-color: #666; }
+  .sidenav footer {
+    width: 100%;
+    height: 50px;
+    color: #717171;
+    background-color: #eee;
+    display: flex;
+    align-items: center; }
+    .sidenav footer p {
+      float: left;
+      font-family: "Cabin", sans-serif;
+      margin-left: 15px; }
+    .sidenav footer .space {
+      flex: 1; }
+    .sidenav footer #icons {
+      float: right;
+      margin-right: 15px; }
+      .sidenav footer #icons i {
+        transform: scale(0.9);
+        margin-left: 8px;
+        transition: color 0.3s ease-in-out, transform 0.3s cubic-bezier(0.22, 0.64, 0.15, 1.6); }
+      .sidenav footer #icons i:hover {
+        color: #1a1a1a;
+        transform: scale(1.1); }
+
+#slide1 {
+  transition: margin-left .5s;
+  padding: 20px; }
+
 /* General Slides */
 .slide {
   background-attachment: fixed;
@@ -152,6 +275,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column; }
+  .index .slide {
+    margin-left: 40%; }
 
 #slide1 {
   background-image: url("../images/sea.jpg");
@@ -214,7 +339,7 @@ body {
     line-height: 100%; }
   #slide2 p {
     font-size: 1.75em;
-    font-family: "Muli", sans-serif; }
+    font-family: "Cabin", sans-serif; }
 
 #slide3 {
   background-image: url("../images/sea.jpg");
@@ -259,7 +384,7 @@ footer {
   align-items: center; }
   footer p {
     float: left;
-    font-family: "Muli", sans-serif;
+    font-family: "Cabin", sans-serif;
     margin-left: 10%; }
   footer .space {
     flex: 1; }

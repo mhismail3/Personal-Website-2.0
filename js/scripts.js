@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
-
-
+    
+    
     $(window).stellar();
     
     $(window).resize(function() {
@@ -21,17 +21,15 @@ jQuery(document).ready(function ($) {
 
     $('img.fade-in-on-load').animate({
         opacity: 1
-    }, 700);
+    }, 300);
     window.setTimeout(function() {
-        $('ul.fade-in-on-load').animate({
-            opacity: 1
-        }, 700);
         $('h1.fade-in-on-load').animate({
             opacity: 1
-        }, 700);
-    }, 800);
-    
-    
+        }, 300);
+        $('.navitems.fade-in-on-load').animate({
+            opacity: 1
+        }, 300);
+    }, 450);
     
     
     slide.waypoint(function (event, direction) {
@@ -77,3 +75,15 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("slide1").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("slide1").style.marginLeft = "0";
+}
