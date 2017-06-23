@@ -78,8 +78,8 @@ jQuery(document).ready(function ($) {
 
 
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("slide1").style.marginLeft = "250px";
+    document.getElementById("mySidenav").style.width = "420px";
+    document.getElementById("slide1").style.marginLeft = "420px";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */

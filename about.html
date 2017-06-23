@@ -4,14 +4,53 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
         <title>Mohsin Ismail | Software Developer</title>
+        
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        
         <link rel="stylesheet" href="stylesheets/normalize.css" type="text/css" media="screen">
         <link rel="stylesheet" href="stylesheets/grid.css" type="text/css" media="screen">
         <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
     </head>
 
     <body>
+        
+        <div id="mySidenav" class="sidenav">
+            <div class="head">
+                <img class="img-circle fade-in-on-load" src="images/profile.jpg" alt="profile-image">
+                <div class="toflex"></div>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+            
+            <h1 class="fade-in-on-load">Mohsin Ismail</h1>
+            <div class="navitems fade-in-on-load">
+                <a href="#">About</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="toflex"></div>
+            <footer>
+                <p>&copy; 2017 Mohsin Ismail</p>
+                <div class="space"></div>
+                <div id="icons">
+                    <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
+<!--
+                    <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+-->
+                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                    <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                </div>
+                
+            </footer>
+        </div>
+        <span onclick="openNav()">open</span>
+        
+        
+<!--
         <div class="menu">
             <h1 >Mohsin Ismail</h1>
             <div class="space"></div>
@@ -22,6 +61,8 @@
                 <li data-slide="4">Contact</li>
             </ul>
         </div>
+-->
+        
         <div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
             <div class="container clearfix" data-stellar-ratio="0.5">
                 <div id="content" class="grid_7">
@@ -76,20 +117,7 @@
         <script type="text/javascript" src="js/jquery.stellar.min.js"></script> 
         <script type="text/javascript" src="js/waypoints.min.js"></script> 
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
-        <script type="text/javascript" src="js/scripts.js"></script> 
-        <script type="text/javascript">
-
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-36251023-1']);
-          _gaq.push(['_setDomainName', 'jqueryscript.net']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-        </script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <script src="https://use.fontawesome.com/a0d680fd61.js"></script>
     </body>
 </html>
