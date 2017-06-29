@@ -1,11 +1,4 @@
-@import "../modules/variables";
-@import "../modules/mixins";
-
-@mixin border-box {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; 
-}
+@import "declarations";
 
 %clearfix {
     *zoom: 1;
@@ -31,6 +24,7 @@
     vertical-align: baseline;
     background: transparent;
     text-decoration: none;
+    color: inherit;
     
     @include border-box;
 }
@@ -54,11 +48,6 @@ img {
 }
 
 @media only screen and (min-width: #{$laptop-width}) {
-    .container {      
-        width: 95%;
-        max-width: $grid-max-width;
-        margin: auto;
-    }
     @for $i from 1 through $grid-columns {      
         .grid_#{$i} {         
             width: 100% / $grid-columns * $i;   

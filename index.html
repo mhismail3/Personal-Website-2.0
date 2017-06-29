@@ -1,66 +1,220 @@
 <!DOCTYPE HTML>
-<html class="no-js index">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
-        <title>Mohsin Ismail | Software Developer</title>
         
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <title>Mohsin Ismail | Software Developer</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,700|Patua+One" rel="stylesheet">
         
         <link rel="stylesheet" href="stylesheets/normalize.css" type="text/css" media="screen">
         <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> 
     </head>
 
-    <body class="index">
-        <div id="mySidenav" class="sidenav">
-            <div class="head">
-                <img class="img-circle fade-in-on-load" src="images/profile.jpg" alt="profile-image">
-<!--                <div class="toflex"></div>-->
-<!--                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-            </div>
-            
-            <h1 class="fade-in-on-load">Mohsin Ismail</h1>
-            <div class="navitems fade-in-on-load">
-                <a href="#">About</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="toflex"></div>
-            <footer>
-                <p>&copy; 2017 Mohsin Ismail</p>
-                <div class="space"></div>
+    <body>
+        <header data-stellar-background-ratio="0.5">
+            &nbsp;
+            <div id="slide0" class="content container" data-stellar-ratio="0.7">
+                <img class="img-circle" src="images/profile.jpg" alt="profile-image">
+                <h1>Mohsin Ismail</h1>
+                <p>Software Engineer &times; Web Designer &times; Front-end Developer</p>
                 <div id="icons">
                     <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
-<!--
-                    <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
--->
                     <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
                     <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
                 </div>
+            </div>
+            <div class="bgoverlay"></div>
+        </header>
+        
+        <div class="contain">
+            
+            <i class="fa fa-angle-down fa-3x animated infinite bounce" aria-hidden="true"></i>
+            
+            <div id="slide1" data-slide="1" class="slide container animated">
+                <h2>About me.</h2>
+                <div>
+                    <img src="images/monitor2.png" alt="monitor-image">
+                    <div>
+                        <p>I'm a Biomedical engineer getting my Master's Degree in Software Engineering.</p>
+                        <p>I'm passionate about designing beautiful, easy-to-use UI / UX interfaces for the web and mobile applications.</p>
+                        <p>I always look to the future when it comes to technologies and best practices that will keep me at the forefront of the tech industry.</p>
+                        <p><b>The mission:</b> to design and code solutions that people want to use and have practical use in a variety of fields.</p>
+                    </div>
+                </div>
+            </div>
+
+<!--            THIS IS THE REASON WHY THE ABOVE ANIMATION SO SLOW-->
+            <div id="slide-bg1" class="slide-bg" data-stellar-background-ratio="0.5"></div>
+            
+            
+<!--            add animated to slide2-->
+            <div id="slide2" data-slide="2" class="animated slide container">
+                <h2>Experience.</h2>
                 
-            </footer>
-        </div>
-<!--        <span onclick="openNav()">open</span>-->
-        
+                <div class="skills">
+                    <ul class="lines">
+                        <li class="line l--0">
+                            <span class="line-label title">
+                                Skill level:
+                            </span>
+                        </li>
+                        <li class="line l--25">
+                            <span class="line-label">
+                                Basics
+                            </span>
+                        </li>
+                        <li class="line l--50">
+                            <span class="line-label">
+                                Intermediate
+                            </span>
+                        </li>
+                        <li class="line l--75">
+                            <span class="line-label">
+                                Advanced
+                            </span>
+                        </li>
+                        <li class="line l--100">
+                            <span class="line-label">
+                                Seasoned
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="charts">
+                    <div class="chart chart-dev">
+                        <span class="chart-title">Development</span>
+                        <ul class="chart-horiz">
+                            <li class="chart-bar" data-skill="80">
+                                <span class="chart-label">
+                                    Python
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="85">
+                                <span class="chart-label">
+                                    HTML
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="80">
+                                <span class="chart-label">
+                                    CSS &amp; SCSS
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="65">
+                                <span class="chart-label">
+                                    JavaScript
+                                </span>
+                            </li>
 <!--
-        <div class="slide" id="slide1" data-slide="1">
-        </div>
+                            <li class="chart-bar" data-skill="65">
+                                <span class="chart-label">
+                                    AngularJS
+                                </span>
+                            </li>
 -->
+                            <li class="chart-bar" data-skill="55">
+                                <span class="chart-label">
+                                    jQuery
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="70">
+                                <span class="chart-label">
+                                    Swift
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="70">
+                                <span class="chart-label">
+                                    Java
+                                </span>
+                            </li>
+<!--
+                            <li class="chart-bar" data-skill="55">
+                                <span class="chart-label">
+                                    NodeJS
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="50">
+                                <span class="chart-label">
+                                    Grunt / Gulp
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="40">
+                                <span class="chart-label">
+                                    .NET
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="60">
+                                <span class="chart-label">
+                                    Umbraco
+                                </span>
+                            </li>
+-->
+                        </ul>
+                    </div>
+
+                    <div class="chart chart-prod">
+                        <span class="chart-title">Productivity</span>
+                        <ul class="chart-horiz">
+                            <li class="chart-bar" data-skill="70">
+                                <span class="chart-label">
+                                    Git &amp; Github
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="85">
+                                <span class="chart-label">
+                                    Microsoft Office
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="chart chart-design">
+                        <span class="chart-title">Design</span>
+                        <ul class="chart-horiz">
+                            <li class="chart-bar" data-skill="60">
+                                <span class="chart-label">
+                                    User Interface
+                                </span>
+                            </li>
+                            <li class="chart-bar" data-skill="50">
+                                <span class="chart-label">
+                                    Pixelmator
+                                </span>
+                            </li>
+<!--
+                            <li class="chart-bar" data-skill="60">
+                                <span class="chart-label">
+                                    User Experience
+                                </span>
+                            </li>
+-->
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            
+            
+            
+            <div id="slide3" data-slide="3" class="slide container">
+                <h2>Projects.</h2>
+                
+            </div>
+            
+            
+        </div>
         
-        
-        
-        </script>
+
+
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
         <script type="text/javascript" src="js/jquery.stellar.min.js"></script> 
         <script type="text/javascript" src="js/waypoints.min.js"></script> 
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
-        <script type="text/javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
         <script src="https://use.fontawesome.com/a0d680fd61.js"></script>
     </body>
 </html>
