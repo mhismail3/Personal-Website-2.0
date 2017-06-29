@@ -51,7 +51,15 @@ jQuery(document).ready(function ($) {
         
         $("#slide2").addClass("animated fadeInUp").delay(800).queue(function(next) {
             $("#slide2 .chart-title, #slide2 .chart-bar").css('animation', '1s horiz-slide ease forwards');
+            next();
         });
+        
+        
+    }, {offset: '50%'});
+    
+    $("#slide3").waypoint(function() {
+        
+        $("#slide3").addClass("fadeInUp");
         
         
     }, {offset: '50%'});
