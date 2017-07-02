@@ -12,6 +12,9 @@ html {
     margin: auto;
 }
 
+.invisible {
+    opacity: 0;
+}
 .animated {
     opacity: 0;
 }
@@ -304,47 +307,61 @@ header {
     
     
     #slide3 {
-//        height: auto;
+        height: auto;
         font-family: $content-font;
         
         & > div {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             height: 100%;
             
             .projects-description {
                 font-size: 1.2em;
                 display: flex;
                 flex-direction: column;
-                width: 50%;
-                padding: 25px;
+                width: 100%;
+                padding: 25px 25px 0;
                 
-                p:first-child {
-                    margin-top: auto;
+                p {
+                    margin-top: 5px;
                 }
-                p:last-child {
-                    margin-bottom: auto;
-                }
+                
+//                p:first-child {
+//                    margin-top: auto;
+//                }
+//                p:last-child {
+//                    margin-bottom: auto;
+//                }
             }
             
             .projects {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
+                width: 100%;
                 padding: 25px;
+                column-count: 2;
+                column-gap: 1em;
+                margin-top: -7px;
+                
+                // Getting rid of these two allows for 2-column masonry
+//                display: flex;
+//                flex-direction: column;
             }
             
             .project {
-//                width: 100%;
+//                position: relative;
+                display: inline-block;
+                width: 100%;
+//                width: 50%; and remove inline-block for no masonry
                 padding: 10px 10px 0;
+                margin-top: 7px;
                 margin-bottom: 15px;
+                
                 
                 box-shadow: 0px 1px 1px 1px #bbb;
                 transition: 0.5s;
                 
                 &:hover {
-                    transform: scale(1.01);
-                    box-shadow: 0px 2px 5px 1px #bbb;
+//                    transform: scale(1.01);
+                    box-shadow: 0px 2px 10px 1px #bbb;
                 }
                 
                 .project-img {
@@ -368,10 +385,10 @@ header {
                 }
             }
             
-            #brackets-theme {
+            #introversed-brackets-theme {
                 
                 .project-img {
-                    background: url(../images/brackets-theme-bg.png);
+                    background: url(../images/introversed-brackets-theme-bg.png);
                     background-size: cover;
                 }
             }
@@ -382,6 +399,13 @@ header {
                     background-size: cover;
                 }
             }
+            #introversed-portfolio-theme-1 {
+                
+                .project-img {
+                    background: url(../images/introversed-portfolio-theme-1.png);
+                    background-size: cover;
+                }
+            }
             
         }
         
@@ -389,7 +413,84 @@ header {
     }
     
     
+    #slide4 {
+        height: auto;
+        
+        & > div {
+            display: flex;
+            flex-direction: row;
+            font-family: $content-font;
+        }
+        
+        .description {
+            font-size: 1.2em;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            padding: 25px;
+        }
+        
+        .contact-group {
+            font-weight: bold;
+            
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 25px;
+            
+        }
+        
+        .contact-single {
+            display: flex;
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            align-items: center;
+            margin: 0 auto 15px;
+            
+            box-shadow: 0px 1px 1px 1px #bbb;
+            transition: 0.5s;
+            
+            &:hover {
+                box-shadow: 0px 2px 10px 1px #bbb;
+            }
+            
+            .fa {
+                margin: 0 30px 0 10px;
+            }
+            .fa-envelope {
+                margin-left: 8px;
+            }
+
+        }
+    }
     
+}
+
+footer {
     
+    bottom: 0;
+    margin-top: 50px;
+    padding: 25px;
     
+    font-family: $content-font;
+    background-color: #eee;
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    p {
+        padding: 0;
+        display: inline-block;
+    }
+    .fa {
+        cursor: pointer;
+        margin: 0 auto;
+    }
+    p.right-hidden {
+        opacity: 0;
+    }
 }

@@ -5,17 +5,28 @@ $.fn.extend({
         this.addClass('animated ' + animationName).one(animationEnd, function() {
             $(this).removeClass('animated ' + animationName);
         });
+    },
+    animateCssInvisible: function(animationName) {
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName).css('opacity', 0); 
+        });
     }
 });
 
 
 jQuery(document).ready(function ($) {
     
-    $(window).stellar();
+    $.stellar();
     
     $(window).resize(function() {
         $.stellar('refresh');
     });
+    
+    $.preload(
+        '../images/building-bg2.jpg',
+        '../images/map-items.jpeg',
+        '../images/monitor2.png'
+    );
 
 
     $("#slide0").children().each(function(index) {
@@ -25,6 +36,7 @@ jQuery(document).ready(function ($) {
     
     window.setTimeout(function() {
         $(".fa-angle-down").animate({opacity: 1}, 500);
+        $(".fa-chevron-up").animate({opacity: 1}, 500);
     }, 1000);
     
     $(window).scroll(function () {
@@ -34,6 +46,7 @@ jQuery(document).ready(function ($) {
     
     $("#slide1").waypoint(function() {
         $(".fa-angle-down").removeClass("infinite bounce").addClass("zoomOut");
+//        $(".fa-angle-down").removeClass("infinite bounce").animateCssInvisible("zoomOut");
         $("#slide1").removeClass("animated");
         $("#slide1 p").addClass("animated");
         $("#slide1 > h2, #slide1 > div > img").addClass("animated fadeInUp").delay(1000).queue(function(next) {
@@ -63,6 +76,20 @@ jQuery(document).ready(function ($) {
         
         
     }, {offset: '50%'});
+    
+    
+//    $("#slide3").waypoint(function() {
+//        $("#slide3").removeClass("animated");
+//        $("#slide3 .project").addClass("animated");
+//        $("#slide3 > h2, #slide3 > div > .projects-description").addClass("animated fadeInUp").delay(1000).queue(function(next) {
+//            $("#slide3 > div > .projects").children().each(function(index) {
+//                $(this).css('animation-duration', (1.2 - .3*index) + 's');
+//                $(this).delay(500*index).addClass("animated fadeInUp");
+//            });
+//            next();
+//        });
+//        
+//    }, {offset: '50%'});
     
     
 //    $('.slide').waypoint(function (event, direction) {
@@ -97,3 +124,10 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+
+function scrollToTop() {
+    $('html,body').animate({
+        scrollTop: 0
+    }, 1500, 'easeInOutCubic');
+}
