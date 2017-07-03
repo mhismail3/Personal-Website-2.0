@@ -32,17 +32,17 @@
         
         <div class="contain">
             
-            <i class="fa fa-angle-down fa-3x animated infinite bounce" aria-hidden="true"></i>
+            <i class="fa fa-angle-down fa-3x fade-in-on-load invisible animated infinite bounce" aria-hidden="true"></i>
             
-            <div id="slide1" data-slide="1" class="slide container animated">
-                <h2>About me.</h2>
+            <div id="slide1" data-slide="1" class="slide container invisible">
+                <h2 class="primary">About me.</h2>
                 <div>
-                    <img src="images/monitor2.png" alt="monitor-image">
+                    <img src="images/monitor2.png" alt="monitor-image" class="primary">
                     <div>
-                        <p>I'm a Biomedical engineer getting my Master's Degree in Software Engineering.</p>
-                        <p>I'm passionate about designing beautiful, easy-to-use UI / UX interfaces for the web and mobile applications.</p>
-                        <p>I always look to the future when it comes to technologies and best practices that will keep me at the forefront of the tech industry.</p>
-                        <p><b>The mission:</b> to design and code solutions that people want to use and have practical use in a variety of fields.</p>
+                        <p class="secondary">I'm a Biomedical engineer getting my Master's Degree in Software Engineering.</p>
+                        <p class="secondary">I'm passionate about designing beautiful, easy-to-use UI / UX interfaces for the web and mobile applications.</p>
+                        <p class="secondary">I always look to the future when it comes to technologies and best practices that will keep me at the forefront of the tech industry.</p>
+                        <p class="secondary"><b>The mission:</b> to design and code solutions that people want to use and have practical use in a variety of fields.</p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             
             
 <!--            add animated to slide2-->
-            <div id="slide2" data-slide="2" class="animated slide container">
+            <div id="slide2" data-slide="2" class="invisible slide container">
                 <h2>Experience.</h2>
                 
                 <div class="skills">
@@ -201,25 +201,25 @@
             <div id="slide-bg2" class="slide-bg" data-stellar-background-ratio="0.5"></div>
             
             
-            <div id="slide3" data-slide="3" class="slide container animated">
-                <h2>Projects.</h2>
+            <div id="slide3" data-slide="3" class="invisible slide container animated">
+                <h2 class="primary">Projects.</h2>
                 <div>
-                    <div class="projects-description">
+                    <div class="projects-description primary">
                         <p>Check out some of the things that I've been working on lately.</p>
                         <p>You can find more of my work and source code at my GitHub page.</p>
                     </div>
                     <div class="projects">
-                        <div id="introversed-brackets-theme" class="project">
+                        <div id="introversed-brackets-theme" class="project secondary">
                             <div class="project-img"></div>
                             <p class="project-title">Introversed Dark Theme for Brackets</p>
                             <p class="project-caption">A dark theme for the Brackets text editor making use of a colorful palette.</p>
                         </div>
-                        <div id="personal-website" class="project">
+                        <div id="personal-website" class="project secondary">
                             <div class="project-img"></div>
                             <p class="project-title">Personal Website </p>
                             <p class="project-caption">A clean, minimalistic, modern portfolio website designed from the ground up using HTML, SCSS, JavaScript &amp; jQuery. You're on it right now.</p>
                         </div>
-                        <div id="introversed-portfolio-theme-1" class="project">
+                        <div id="introversed-portfolio-theme-1" class="project secondary">
                             <div class="project-img"></div>
                             <p class="project-title">Introversed Portfolio Theme #1</p>
                             <p class="project-caption">A simple portfolio theme consisting of a title page template along with a sub-page template that can be customized to suit your own style. Written purely in HTML &amp; CSS.</p>
@@ -268,7 +268,7 @@
             <footer>
                 <div class="container">
                     <p>&copy; Mohsin Ismail 2017</p>
-                    <i class="fa fa-chevron-up fa-lg animated infinite pulse" onclick="scrollToTop()" aria-hidden="true"></i>
+                    <i class="fa fa-chevron-up fa-lg fade-in-on-load animated infinite pulse" onclick="scrollToTop()" aria-hidden="true"></i>
 <!--
                     <div id="icons">
                         <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
@@ -288,7 +288,8 @@
         <script type="text/javascript" src="js/jquery.stellar.min.js"></script> 
         <script type="text/javascript" src="js/waypoints.min.js"></script> 
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js/jquery.preload.min.js"></script> 
+        <script type="text/javascript" src="js/jquery.preload.min.js"></script>
+		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
         <script src="https://use.fontawesome.com/a0d680fd61.js"></script>

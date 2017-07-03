@@ -2,19 +2,31 @@ var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimation
 
 $.fn.extend({
     animateCss: function(animationName) {
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-        });
+        this.removeClass('invisible').addClass('animated ' + animationName);
     },
     animateCssInvisible: function(animationName) {
         this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName).css('opacity', 0); 
+            $(this).addClass('invisible');
+        });
+    },
+    animateCssStages: function(animationName) {
+        this.removeClass('invisible');
+        this.find('.primary, .secondary, .tertiary').addClass('invisible');
+        this.find('.primary').removeClass('invisible').addClass( 'animated ' + animationName).end().one(animationEnd, function() {
+            $(this).delay(1000).find('.secondary').removeClass( 'invisible').addClass('animated ' + animationName).end().one(animationEnd, function() {
+                $(this).delay(1000).find('.tertiary').removeClass( 'invisible').addClass('animated ' + animationName);
+            });
+        });
+    },
+    setAnimationDuration: function(startDuration, incrementDuration) {
+        this.children().each(function(index) {
+            $(this).css('animation-duration', (startDuration - incrementDuration * index) + 's'); 
         });
     }
 });
 
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(function($) {
     
     $.stellar();
     
@@ -34,62 +46,34 @@ jQuery(document).ready(function ($) {
         $(this).delay(200*index).animateCss('fadeInUp');
     });
     
-    window.setTimeout(function() {
-        $(".fa-angle-down").animate({opacity: 1}, 500);
-        $(".fa-chevron-up").animate({opacity: 1}, 500);
-    }, 1000);
-    
     $(window).scroll(function () {
         var currentScrollTop = $(window).scrollTop();
         $('.bgoverlay').css('opacity', currentScrollTop/$('.bgoverlay').height()*0.5);
     });
     
+    window.setTimeout(function() {
+        $(".fade-in-on-load").animate({opacity: 1}, 500);
+    }, 1000);
+    
+    
     $("#slide1").waypoint(function() {
-        $(".fa-angle-down").removeClass("infinite bounce").addClass("zoomOut");
-//        $(".fa-angle-down").removeClass("infinite bounce").animateCssInvisible("zoomOut");
-        $("#slide1").removeClass("animated");
-        $("#slide1 p").addClass("animated");
-        $("#slide1 > h2, #slide1 > div > img").addClass("animated fadeInUp").delay(1000).queue(function(next) {
-            $("#slide1 > div > div").children().each(function(index) {
-                $(this).css('animation-duration', (1.2 - .3*index) + 's');
-                $(this).delay(500*index).addClass("animated fadeInUp");
-            });
-            next();
-        });
-        
+        $(".fa-angle-down").removeClass("infinite bounce").animateCssInvisible("zoomOut");
+        $(this).children("div > div").setAnimationDuration(1.2, .3);
+        $(this).animateCssStages("fadeInUp");
     }, {offset: '50%'});
-
+    
     
     $("#slide2").waypoint(function() {
-        
-        $("#slide2").addClass("animated fadeInUp").delay(800).queue(function(next) {
-            $("#slide2 .chart-title, #slide2 .chart-bar").css('animation', '1s horiz-slide ease forwards');
-            next();
-        });
-        
-        
-    }, {offset: '50%'});
+        $(this).one(animationEnd, function() {
+            $(this).find(".chart-title, .chart-bar").css('animation', '1s horiz-slide ease forwards');
+        }).animateCss("fadeInUp");
+    }, {offset: '50%'});   
+    
     
     $("#slide3").waypoint(function() {
-        
-        $("#slide3").addClass("fadeInUp");
-        
-        
+        $(this).children("div > .projects > div").setAnimationDuration(1.2, .3);
+        $(this).animateCssStages("fadeInUp");
     }, {offset: '50%'});
-    
-    
-//    $("#slide3").waypoint(function() {
-//        $("#slide3").removeClass("animated");
-//        $("#slide3 .project").addClass("animated");
-//        $("#slide3 > h2, #slide3 > div > .projects-description").addClass("animated fadeInUp").delay(1000).queue(function(next) {
-//            $("#slide3 > div > .projects").children().each(function(index) {
-//                $(this).css('animation-duration', (1.2 - .3*index) + 's');
-//                $(this).delay(500*index).addClass("animated fadeInUp");
-//            });
-//            next();
-//        });
-//        
-//    }, {offset: '50%'});
     
     
 //    $('.slide').waypoint(function (event, direction) {

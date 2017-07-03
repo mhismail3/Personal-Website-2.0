@@ -99,9 +99,6 @@ html {
 .invisible {
   opacity: 0; }
 
-.animated {
-  opacity: 0; }
-
 header {
   background: url(../images/brick-bg.png) repeat;
   height: 550px;
@@ -330,7 +327,7 @@ header {
         margin-top: 7px;
         margin-bottom: 15px;
         box-shadow: 0px 1px 1px 1px #bbb;
-        transition: 0.5s; }
+        transition: box-shadow 0.3s; }
         .contain #slide3 > div .project:hover {
           box-shadow: 0px 2px 10px 1px #bbb; }
         .contain #slide3 > div .project .project-img {
@@ -382,7 +379,7 @@ header {
       align-items: center;
       margin: 0 auto 15px;
       box-shadow: 0px 1px 1px 1px #bbb;
-      transition: 0.5s; }
+      transition: box-shadow 0.3s; }
       .contain #slide4 .contact-single:hover {
         box-shadow: 0px 2px 10px 1px #bbb; }
       .contain #slide4 .contact-single .fa {
