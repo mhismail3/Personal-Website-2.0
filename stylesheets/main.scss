@@ -15,9 +15,12 @@ html {
 .invisible {
     opacity: 0;
 }
-//.animated {
-//    opacity: 0;
-//}
+
+body {
+	@include respond-to(phones) {
+		font-size: 85%;
+	}
+}
 
 header {
     background: url(../images/brick-bg.png) repeat;
@@ -26,10 +29,27 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
+	
+	@include respond-to(phones) {
+		height: 100%;
+	}
     
     .content {
         position: relative;
-        margin-bottom: 100px;
+//		margin-top: auto;
+//        margin-bottom: 80px;
+		margin: 40px 10px;
+//		margin: auto auto 80px;
+		text-align: center;
+		
+		@include respond-to(tablets){
+//			margin: 40px 10px;
+			margin: auto auto 80px;
+		}
+		@include respond-to(laptops) {
+			margin: auto auto 80px;
+			text-align: inherit;
+		}
         
         & > *:not(:first-child) {
             padding-top: 10px;
@@ -82,9 +102,9 @@ header {
     .fa-angle-down {
         color: #555;
         position: fixed;
-        left: 49%;
+        left: 47%;
         bottom: 15%;
-//        transform: translateX(100px);
+//        transform: translateX(-50%);
 //        transform-origin: center center;
     }
     
@@ -96,21 +116,42 @@ header {
         
         display: flex;
         flex-direction: column;
+		
+		@include respond-to(phones) {
+			margin-top: 30px;
+		}
         
         h2 {
             font-family: $title-font;
             font-size: 2.5em;
             color: #555;
+			text-align: center;
             
             border-bottom: 1px solid #ccc;
+			
+			@include respond-to(laptops) {
+				text-align: inherit;
+			}
         }
     }
+	
+	.slide-bg {
+		height: 500px;
+		
+		@include respond-to(phones) {
+			height: 300px;
+		}
+	}
     
     #slide1 {    
 
         & > div {
             display: flex;
             flex-direction: row;
+			
+			@include respond-to(phones) {
+				flex-direction: column;
+			}
             
             img {
                 position: relative;
@@ -118,17 +159,31 @@ header {
                 max-width: 80%;
                 margin: auto 0 auto -32%;
                 padding: 50px;
+				
+				@include respond-to(phones) {
+					margin: 20px auto;
+					max-width: 70%;
+					padding: 0;
+				}
             }
             div {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 padding: 35px;
+				
+				@include respond-to(phones) {
+					padding: 20px;
+				}
             }
         }
         p {
             font-family: $content-font;
-            font-size: 1.2em;
+            font-size: 1.1em;
+			
+			@include respond-to(laptops) {
+				font-size: 1.2em;
+			}
 //            text-align: justify;
             
             &:first-child {
@@ -144,15 +199,22 @@ header {
         background: url(../images/building-bg2.jpg);
         background-attachment: fixed;
         background-size: cover;
-        height: 500px;
         margin-top: 90px;
         
         position: relative;
         z-index: 1;
+		
+		@include respond-to(phones) {
+			margin: 0;
+		}
     }
     
     #slide2 {
         height: 1000px;
+		
+		@include respond-to(phones) {
+			height: 550px;
+		}
         
         .skills {
             width: 85%;
@@ -162,6 +224,7 @@ header {
             padding-top: 15px;
 
             position: relative;
+			
         }
 
         .lines {
@@ -190,6 +253,14 @@ header {
                     position: absolute;
                     bottom: -20px;
                     right: -65px;
+					
+					@include respond-to(phones) {
+						font-size: 0.8em;
+						font-weight: bold;
+						
+						width: 90px;
+						right: -45px;
+					}
 
                     &.title {
                         text-transform: uppercase;
@@ -211,10 +282,18 @@ header {
             left: 0;
             right: 0;
             margin: 80px auto 0;
+			
+			@include respond-to(phones) {
+				margin-top: 65px;
+			}
         }
 
         .chart {
             margin-top: 20px;
+			
+			@include respond-to(phones) {
+				margin-top: 10px;
+			}
 
             &:first-child {
                 margin: 0;
@@ -227,8 +306,13 @@ header {
 
             font-size: 1.1em;
             font-weight: bold;
+//			text-transform: uppercase;
 
             opacity: 0;
+			
+			@include respond-to(phones) {
+				margin-bottom: 5px;
+			}
 //            animation: 1s horiz-slide ease forwards;
 
 //            .chart-dev & {
@@ -255,7 +339,12 @@ header {
 
             background: linear-gradient(to left, #536668, #859091);
             border-radius: 0 $border-rad $border-rad 0;
-            opacity: 0; 
+            opacity: 0;
+			
+			@include respond-to(phones) {
+				height: 25px;
+				margin-bottom: 7px;
+			}
 
 //            animation: 1s horiz-slide ease forwards;
 
@@ -290,6 +379,10 @@ header {
             padding-left: 10px;
             color: white;
             margin: auto 0;
+			
+			@include respond-to(phones) {
+				font-weight: normal;
+			}
         } 
     }
     
@@ -298,8 +391,11 @@ header {
         background: url(../images/map-items.jpeg);
         background-attachment: fixed;
         background-size: cover;
-        height: 500px;
         margin-top: 90px;
+		
+		@include respond-to(phones) {
+			margin-top: 25px;
+		}
 
         position: relative;
         z-index: 1;
@@ -319,12 +415,27 @@ header {
                 font-size: 1.2em;
                 display: flex;
                 flex-direction: column;
-                width: 100%;
-                padding: 25px 25px 0;
+                width: 95%;
+                padding: 0;
+				margin: 20px auto;
+				
+				@include respond-to(tablets) {
+					width: 80%;
+					padding: 45px 25px 0;
+					margin: 0 auto;
+				}
+				@include respond-to(laptops) {
+					width: 100%;
+					padding: 0 25px;
+					margin: 45px auto;
+				}
                 
                 p {
-                    margin-top: 5px;
+                    margin-top: 0px;
                 }
+				p:last-child {
+					margin-bottom: 0px;
+				}
                 
 //                p:first-child {
 //                    margin-top: auto;
@@ -335,11 +446,24 @@ header {
             }
             
             .projects {
-                width: 100%;
-                padding: 25px;
-                column-count: 2;
-                column-gap: 1em;
-                margin-top: -7px;
+				position: relative;
+                width: 95%;
+                padding: 0;
+				margin: 0 auto;
+				
+				@include respond-to(tablets) {
+					width: 80%;
+                	padding: 25px;
+					margin: 0 auto;
+				}
+				@include respond-to(laptops) {
+					width: 100%;
+                	padding: 25px;
+					margin: 0 auto;
+					column-count: 2;
+					column-gap: 1em;
+					margin-top: -7px;
+				}
                 
                 // Getting rid of these two allows for 2-column masonry
 //                display: flex;
@@ -350,18 +474,32 @@ header {
 //                position: relative;
                 display: inline-block;
                 width: 100%;
+//				width: 480px;
 //                width: 50%; and remove inline-block for no masonry
-                padding: 10px 10px 0;
-                margin-top: 7px;
-                margin-bottom: 15px;
+                padding: 10px;
+				margin-bottom: 20px;
                 
                 
                 box-shadow: 0px 1px 1px 1px #bbb;
                 transition: box-shadow 0.3s;
-                &:hover {
-//                    transform: scale(1.01);
-                    box-shadow: 0px 2px 10px 1px #bbb;
-                }
+				
+				@include respond-to(tablets) {
+					padding: 10px 10px 0;
+					margin-top: 7px;
+					margin-bottom: 15px;
+				}
+				@include respond-to(laptops) {
+					padding: 10px 10px 0;
+					margin-top: 7px;
+					margin-bottom: 15px;
+				}
+				@include respond-to(mouse-hover) {
+					&:hover {
+	//                    transform: scale(1.01);
+						box-shadow: 0px 2px 10px 1px #bbb;
+					}
+				}
+                
                 
                 .project-img {
                     position: relative;
@@ -374,13 +512,29 @@ header {
                     font-size: 0.9em;
                     font-weight: bold;
                     color: #555;
-                    margin: 5px 0 0;
+                    margin: 5px 0;
                     padding: 0;
+					
+					@include respond-to(tablets) {
+						margin: 5px 0 0;
+                    	padding: 0;
+					}
+					@include respond-to(tablets) {
+						margin: 5px 0 0;
+                    	padding: 0;
+					}
                 }
                 p.project-caption {
                     font-size: 0.85em;
                     color: #777;
-                    margin: 3px 0 5px;
+                    margin: 0;
+					
+					@include respond-to(tablets) {
+						margin: 3px 0 5px;
+					}
+					@include respond-to(tablets) {
+						margin: 3px 0 5px;
+					}
                 }
             }
             
@@ -414,31 +568,74 @@ header {
     
     #slide4 {
         height: auto;
+		margin-top: 20px;
         
         & > div {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             font-family: $content-font;
+			
+			@include respond-to(laptops) {
+				flex-direction: row;
+			}
+			
         }
-        
-        .description {
+		.description {
             font-size: 1.2em;
             display: flex;
             flex-direction: column;
-            width: 60%;
-            padding: 25px;
+            width: 95%;
+            padding: 0;
+			margin: 20px auto;
+			
+			@include respond-to(tablets) {
+				width: 70%;
+				padding: 25px;
+				margin: 0 auto;
+			}
+			@include respond-to(laptops) {
+				width: 60%;
+				padding: 25px;
+				margin: 0 auto;
+			}
+			
+			p {
+				margin-top: 0;
+				margin-bottom: 25px;
+			}
+			p:first-child {
+				margin-top: auto;
+			}
+			p:last-child {
+				margin-bottom: auto;
+			}
+			img {
+				width: inherit;
+				max-width: 50%;
+				right: 0;
+			}
         }
-        
         .contact-group {
             font-weight: bold;
             
             display: flex;
             flex-direction: column;
-            width: 40%;
-            padding: 25px;
-            
+            width: 95%;
+            padding: 0;
+			margin: 20px auto;
+			
+			@include respond-to(tablets) {
+				width: 70%;
+				padding: 25px;
+				margin: 0 auto;
+			}
+			@include respond-to(laptops) {
+				width: 40%;
+				padding: 25px;
+				margin: 0 auto;
+			}
+			
         }
-        
         .contact-single {
             display: flex;
             width: 100%;
@@ -450,9 +647,12 @@ header {
             box-shadow: 0px 1px 1px 1px #bbb;
             transition: box-shadow 0.3s;
             
-            &:hover {
-                box-shadow: 0px 2px 10px 1px #bbb;
-            }
+			@include respond-to(mouse-hover) {
+				&:hover {
+					box-shadow: 0px 2px 10px 1px #bbb;
+				}
+			}
+
             
             .fa {
                 margin: 0 30px 0 10px;
@@ -460,8 +660,8 @@ header {
             .fa-envelope {
                 margin-left: 8px;
             }
-
         }
+		
     }
     
 }
@@ -469,8 +669,12 @@ header {
 footer {
     
     bottom: 0;
-    margin-top: 50px;
+	height: 75px;
+    margin-top: 0px;
     padding: 25px;
+	
+	display: flex;
+	flex-direction: column;
     
     font-family: $content-font;
     background-color: #eee;
@@ -488,8 +692,16 @@ footer {
     .fa {
         cursor: pointer;
         margin: 0 auto;
+		
+		@include respond-to(phones) {
+			margin-right: 0;
+		}
     }
     p.right-hidden {
         opacity: 0;
+		
+		@include respond-to(phones) {
+			display: none;
+		}
     }
 }

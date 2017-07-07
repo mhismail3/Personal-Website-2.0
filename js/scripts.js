@@ -9,26 +9,32 @@ $.fn.extend({
             $(this).addClass('invisible');
         });
     },
-    animateCssStages: function(animationName) {
+    animateCssStages: function(animationName, animationName2 = 'default', animationName3 = 'default') {
+		if (animationName2 === 'default') animationName2 = animationName;
+		if (animationName3 === 'default') animationName3 = animationName;
         this.removeClass('invisible');
         this.find('.primary, .secondary, .tertiary').addClass('invisible');
         this.find('.primary').removeClass('invisible').addClass( 'animated ' + animationName).end().one(animationEnd, function() {
-            $(this).delay(1000).find('.secondary').removeClass( 'invisible').addClass('animated ' + animationName).end().one(animationEnd, function() {
-                $(this).delay(1000).find('.tertiary').removeClass( 'invisible').addClass('animated ' + animationName);
+            $(this).delay(1000).find('.secondary').removeClass( 'invisible').addClass('animated ' + animationName2).end().one(animationEnd, function() {
+                $(this).delay(1000).find('.tertiary').removeClass( 'invisible').addClass('animated ' + animationName3);
             });
         });
     },
     setAnimationDuration: function(startDuration, incrementDuration) {
         this.children().each(function(index) {
-            $(this).css('animation-duration', (startDuration - incrementDuration * index) + 's'); 
-        });
+            $(this).css('animation-duration', (startDuration + incrementDuration * index) + 's'); 
+        }).end();
+//		.end() is questionable
     }
 });
 
 
 jQuery(document).ready(function($) {
     
-    $.stellar();
+    $.stellar({
+		horizontalScrolling: false,
+		hideDistantElements: false
+	});
     
     $(window).resize(function() {
         $.stellar('refresh');
@@ -40,11 +46,15 @@ jQuery(document).ready(function($) {
         '../images/monitor2.png'
     );
 
-
-    $("#slide0").children().each(function(index) {
-        $(this).css('animation-duration', (.8 - .2*index) + 's');
-        $(this).delay(200*index).animateCss('fadeInUp');
-    });
+//	$('#slide3 .projects').masonry({
+//		itemSelector: '.project',
+//		columnWidth: '.project',
+//		percentPosition: true,
+//		horizontalOrder: true,
+//		fitWidth: true,
+//		gutter: 60
+//	});
+	
     
     $(window).scroll(function () {
         var currentScrollTop = $(window).scrollTop();
@@ -55,10 +65,17 @@ jQuery(document).ready(function($) {
         $(".fade-in-on-load").animate({opacity: 1}, 500);
     }, 1000);
     
-    
+    if (window.matchMedia('(max-width: 600px)').matches) {
+		$("#slide0").animateCss('fadeInUp');
+	} else {
+		$("#slide0").setAnimationDuration(.8, -.2);
+		$("#slide0").children().addClass("primary" ).end().animateCssStages('fadeInUp');
+	}
+	
+	
     $("#slide1").waypoint(function() {
         $(".fa-angle-down").removeClass("infinite bounce").animateCssInvisible("zoomOut");
-        $(this).children("div > div").setAnimationDuration(1.2, .3);
+        $(this).find('.description').setAnimationDuration(1.2, -.3);
         $(this).animateCssStages("fadeInUp");
     }, {offset: '50%'});
     
@@ -71,9 +88,19 @@ jQuery(document).ready(function($) {
     
     
     $("#slide3").waypoint(function() {
-        $(this).children("div > .projects > div").setAnimationDuration(1.2, .3);
+        $(this).find('.projects').setAnimationDuration(.9, .2);
         $(this).animateCssStages("fadeInUp");
     }, {offset: '50%'});
+	
+	
+	$("#slide4").waypoint(function() {
+        $(this).find(".contact-group").setAnimationDuration(.6, .1);
+        $(this).animateCssStages("fadeInLeft", "fadeInUp");
+    }, {offset: '50%'});
+	
+//	$("footer").waypoint(function() {
+//		$(this).animateCss("slideInUp");
+//	}, {offset: '100%'});
     
     
 //    $('.slide').waypoint(function (event, direction) {

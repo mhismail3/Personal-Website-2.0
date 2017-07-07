@@ -99,6 +99,10 @@ html {
 .invisible {
   opacity: 0; }
 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 85%; } }
+
 header {
   background: url(../images/brick-bg.png) repeat;
   height: 550px;
@@ -106,9 +110,20 @@ header {
   position: relative;
   display: flex;
   flex-direction: column; }
+  @media only screen and (max-width: 600px) {
+    header {
+      height: 100%; } }
   header .content {
     position: relative;
-    margin-bottom: 100px; }
+    margin: 40px 10px;
+    text-align: center; }
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+      header .content {
+        margin: auto auto 80px; } }
+    @media only screen and (min-width: 1025px) {
+      header .content {
+        margin: auto auto 80px;
+        text-align: inherit; } }
     header .content > *:not(:first-child) {
       padding-top: 10px;
       margin: 0; }
@@ -148,7 +163,7 @@ header {
   .contain .fa-angle-down {
     color: #555;
     position: fixed;
-    left: 49%;
+    left: 47%;
     bottom: 15%; }
   .contain .slide {
     position: relative;
@@ -156,28 +171,54 @@ header {
     margin-top: 80px;
     display: flex;
     flex-direction: column; }
+    @media only screen and (max-width: 600px) {
+      .contain .slide {
+        margin-top: 30px; } }
     .contain .slide h2 {
       font-family: "Patua One", sans-serif;
       font-size: 2.5em;
       color: #555;
+      text-align: center;
       border-bottom: 1px solid #ccc; }
+      @media only screen and (min-width: 1025px) {
+        .contain .slide h2 {
+          text-align: inherit; } }
+  .contain .slide-bg {
+    height: 500px; }
+    @media only screen and (max-width: 600px) {
+      .contain .slide-bg {
+        height: 300px; } }
   .contain #slide1 > div {
     display: flex;
     flex-direction: row; }
+    @media only screen and (max-width: 600px) {
+      .contain #slide1 > div {
+        flex-direction: column; } }
     .contain #slide1 > div img {
       position: relative;
       width: inherit;
       max-width: 80%;
       margin: auto 0 auto -32%;
       padding: 50px; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide1 > div img {
+          margin: 20px auto;
+          max-width: 70%;
+          padding: 0; } }
     .contain #slide1 > div div {
       display: flex;
       flex-direction: column;
       width: 100%;
       padding: 35px; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide1 > div div {
+          padding: 20px; } }
   .contain #slide1 p {
     font-family: "Nunito", sans-serif;
-    font-size: 1.2em; }
+    font-size: 1.1em; }
+    @media only screen and (min-width: 1025px) {
+      .contain #slide1 p {
+        font-size: 1.2em; } }
     .contain #slide1 p:first-child {
       margin-top: auto; }
     .contain #slide1 p:last-child {
@@ -186,12 +227,17 @@ header {
     background: url(../images/building-bg2.jpg);
     background-attachment: fixed;
     background-size: cover;
-    height: 500px;
     margin-top: 90px;
     position: relative;
     z-index: 1; }
+    @media only screen and (max-width: 600px) {
+      .contain #slide-bg1 {
+        margin: 0; } }
   .contain #slide2 {
     height: 1000px; }
+    @media only screen and (max-width: 600px) {
+      .contain #slide2 {
+        height: 550px; } }
     .contain #slide2 .skills {
       width: 85%;
       max-width: 960px;
@@ -225,6 +271,12 @@ header {
           position: absolute;
           bottom: -20px;
           right: -65px; }
+          @media only screen and (max-width: 600px) {
+            .contain #slide2 .lines .line .line-label {
+              font-size: 0.8em;
+              font-weight: bold;
+              width: 90px;
+              right: -45px; } }
           .contain #slide2 .lines .line .line-label.title {
             text-transform: uppercase;
             font-weight: bold; }
@@ -239,8 +291,14 @@ header {
       left: 0;
       right: 0;
       margin: 80px auto 0; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide2 .charts {
+          margin-top: 65px; } }
     .contain #slide2 .chart {
       margin-top: 20px; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide2 .chart {
+          margin-top: 10px; } }
       .contain #slide2 .chart:first-child {
         margin: 0; }
     .contain #slide2 .chart-title {
@@ -249,6 +307,9 @@ header {
       font-size: 1.1em;
       font-weight: bold;
       opacity: 0; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide2 .chart-title {
+          margin-bottom: 5px; } }
     .contain #slide2 .chart-horiz {
       overflow: hidden; }
     .contain #slide2 .chart-bar {
@@ -259,6 +320,10 @@ header {
       background: linear-gradient(to left, #536668, #859091);
       border-radius: 0 3px 3px 0;
       opacity: 0; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide2 .chart-bar {
+          height: 25px;
+          margin-bottom: 7px; } }
       .contain #slide2 .chart-bar[data-skill='35'] {
         width: 35%; }
       .contain #slide2 .chart-bar[data-skill='40'] {
@@ -291,14 +356,19 @@ header {
       padding-left: 10px;
       color: white;
       margin: auto 0; }
+      @media only screen and (max-width: 600px) {
+        .contain #slide2 .chart-label {
+          font-weight: normal; } }
   .contain #slide-bg2 {
     background: url(../images/map-items.jpeg);
     background-attachment: fixed;
     background-size: cover;
-    height: 500px;
     margin-top: 90px;
     position: relative;
     z-index: 1; }
+    @media only screen and (max-width: 600px) {
+      .contain #slide-bg2 {
+        margin-top: 25px; } }
   .contain #slide3 {
     height: auto;
     font-family: "Nunito", sans-serif; }
@@ -310,26 +380,61 @@ header {
         font-size: 1.2em;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        padding: 25px 25px 0; }
+        width: 95%;
+        padding: 0;
+        margin: 20px auto; }
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+          .contain #slide3 > div .projects-description {
+            width: 80%;
+            padding: 45px 25px 0;
+            margin: 0 auto; } }
+        @media only screen and (min-width: 1025px) {
+          .contain #slide3 > div .projects-description {
+            width: 100%;
+            padding: 0 25px;
+            margin: 45px auto; } }
         .contain #slide3 > div .projects-description p {
-          margin-top: 5px; }
+          margin-top: 0px; }
+        .contain #slide3 > div .projects-description p:last-child {
+          margin-bottom: 0px; }
       .contain #slide3 > div .projects {
-        width: 100%;
-        padding: 25px;
-        column-count: 2;
-        column-gap: 1em;
-        margin-top: -7px; }
+        position: relative;
+        width: 95%;
+        padding: 0;
+        margin: 0 auto; }
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+          .contain #slide3 > div .projects {
+            width: 80%;
+            padding: 25px;
+            margin: 0 auto; } }
+        @media only screen and (min-width: 1025px) {
+          .contain #slide3 > div .projects {
+            width: 100%;
+            padding: 25px;
+            margin: 0 auto;
+            column-count: 2;
+            column-gap: 1em;
+            margin-top: -7px; } }
       .contain #slide3 > div .project {
         display: inline-block;
         width: 100%;
-        padding: 10px 10px 0;
-        margin-top: 7px;
-        margin-bottom: 15px;
+        padding: 10px;
+        margin-bottom: 20px;
         box-shadow: 0px 1px 1px 1px #bbb;
         transition: box-shadow 0.3s; }
-        .contain #slide3 > div .project:hover {
-          box-shadow: 0px 2px 10px 1px #bbb; }
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+          .contain #slide3 > div .project {
+            padding: 10px 10px 0;
+            margin-top: 7px;
+            margin-bottom: 15px; } }
+        @media only screen and (min-width: 1025px) {
+          .contain #slide3 > div .project {
+            padding: 10px 10px 0;
+            margin-top: 7px;
+            margin-bottom: 15px; } }
+        @media (hover: hover) {
+          .contain #slide3 > div .project:hover {
+            box-shadow: 0px 2px 10px 1px #bbb; } }
         .contain #slide3 > div .project .project-img {
           position: relative;
           height: 120px;
@@ -338,12 +443,26 @@ header {
           font-size: 0.9em;
           font-weight: bold;
           color: #555;
-          margin: 5px 0 0;
+          margin: 5px 0;
           padding: 0; }
+          @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .contain #slide3 > div .project p.project-title {
+              margin: 5px 0 0;
+              padding: 0; } }
+          @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .contain #slide3 > div .project p.project-title {
+              margin: 5px 0 0;
+              padding: 0; } }
         .contain #slide3 > div .project p.project-caption {
           font-size: 0.85em;
           color: #777;
-          margin: 3px 0 5px; }
+          margin: 0; }
+          @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .contain #slide3 > div .project p.project-caption {
+              margin: 3px 0 5px; } }
+          @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .contain #slide3 > div .project p.project-caption {
+              margin: 3px 0 5px; } }
       .contain #slide3 > div #introversed-brackets-theme .project-img {
         background: url(../images/introversed-brackets-theme-bg.png);
         background-size: cover; }
@@ -354,23 +473,60 @@ header {
         background: url(../images/introversed-portfolio-theme-1.png);
         background-size: cover; }
   .contain #slide4 {
-    height: auto; }
+    height: auto;
+    margin-top: 20px; }
     .contain #slide4 > div {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       font-family: "Nunito", sans-serif; }
+      @media only screen and (min-width: 1025px) {
+        .contain #slide4 > div {
+          flex-direction: row; } }
     .contain #slide4 .description {
       font-size: 1.2em;
       display: flex;
       flex-direction: column;
-      width: 60%;
-      padding: 25px; }
+      width: 95%;
+      padding: 0;
+      margin: 20px auto; }
+      @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .contain #slide4 .description {
+          width: 70%;
+          padding: 25px;
+          margin: 0 auto; } }
+      @media only screen and (min-width: 1025px) {
+        .contain #slide4 .description {
+          width: 60%;
+          padding: 25px;
+          margin: 0 auto; } }
+      .contain #slide4 .description p {
+        margin-top: 0;
+        margin-bottom: 25px; }
+      .contain #slide4 .description p:first-child {
+        margin-top: auto; }
+      .contain #slide4 .description p:last-child {
+        margin-bottom: auto; }
+      .contain #slide4 .description img {
+        width: inherit;
+        max-width: 50%;
+        right: 0; }
     .contain #slide4 .contact-group {
       font-weight: bold;
       display: flex;
       flex-direction: column;
-      width: 40%;
-      padding: 25px; }
+      width: 95%;
+      padding: 0;
+      margin: 20px auto; }
+      @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .contain #slide4 .contact-group {
+          width: 70%;
+          padding: 25px;
+          margin: 0 auto; } }
+      @media only screen and (min-width: 1025px) {
+        .contain #slide4 .contact-group {
+          width: 40%;
+          padding: 25px;
+          margin: 0 auto; } }
     .contain #slide4 .contact-single {
       display: flex;
       width: 100%;
@@ -380,8 +536,9 @@ header {
       margin: 0 auto 15px;
       box-shadow: 0px 1px 1px 1px #bbb;
       transition: box-shadow 0.3s; }
-      .contain #slide4 .contact-single:hover {
-        box-shadow: 0px 2px 10px 1px #bbb; }
+      @media (hover: hover) {
+        .contain #slide4 .contact-single:hover {
+          box-shadow: 0px 2px 10px 1px #bbb; } }
       .contain #slide4 .contact-single .fa {
         margin: 0 30px 0 10px; }
       .contain #slide4 .contact-single .fa-envelope {
@@ -389,8 +546,11 @@ header {
 
 footer {
   bottom: 0;
-  margin-top: 50px;
+  height: 75px;
+  margin-top: 0px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
   font-family: "Nunito", sans-serif;
   background-color: #eee; }
   footer .container {
@@ -403,7 +563,13 @@ footer {
   footer .fa {
     cursor: pointer;
     margin: 0 auto; }
+    @media only screen and (max-width: 600px) {
+      footer .fa {
+        margin-right: 0; } }
   footer p.right-hidden {
     opacity: 0; }
+    @media only screen and (max-width: 600px) {
+      footer p.right-hidden {
+        display: none; } }
 
 /*# sourceMappingURL=main.css.map */
