@@ -107,14 +107,12 @@ header {
   background: url(../images/brick-bg.png) repeat;
   height: 550px;
   width: 100%;
-  position: relative;
   display: flex;
   flex-direction: column; }
   @media only screen and (max-width: 600px) {
     header {
       height: 100%; } }
   header .content {
-    position: relative;
     margin: 40px 10px;
     text-align: center; }
     @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -125,10 +123,8 @@ header {
         margin: auto auto 80px;
         text-align: inherit; } }
     header .content > *:not(:first-child) {
-      padding-top: 10px;
-      margin: 0; }
+      margin: 10px 0; }
     header .content .img-circle {
-      vertical-align: middle;
       width: 10%;
       min-width: 80px;
       max-width: 140px;
@@ -137,15 +133,12 @@ header {
       font-family: "Patua One", sans-serif;
       font-size: 3em;
       color: #555;
-      line-height: 1em;
-      margin: 0; }
+      line-height: 1em; }
     header .content p {
       font-family: "Nunito", sans-serif;
-      font-size: 1.2em;
-      margin: 0 0 0 2px; }
+      font-size: 1.2em; }
     header .content #icons {
-      color: #555;
-      margin: 0 0 0 2px; }
+      color: #555; }
       header .content #icons * {
         margin-right: 8px; }
   header .bgoverlay {
@@ -160,7 +153,7 @@ header {
   width: 100%;
   background-color: #f9f9f9;
   box-shadow: 0px 1px 5px 1px #555; }
-  .contain .fa-angle-down {
+  .contain > .fa {
     color: #555;
     position: fixed;
     left: 47%;
@@ -184,35 +177,46 @@ header {
         .contain .slide h2 {
           text-align: inherit; } }
   .contain .slide-bg {
-    height: 500px; }
+    height: 500px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1; }
     @media only screen and (max-width: 600px) {
       .contain .slide-bg {
-        height: 300px; } }
-  .contain #slide1 > div {
+        height: 300px;
+        margin-top: 30px; } }
+  @media only screen and (max-width: 600px) {
+    .contain #slide1 {
+      height: 100%; } }
+  .contain #slide1 .wrapper {
     display: flex;
     flex-direction: row; }
     @media only screen and (max-width: 600px) {
-      .contain #slide1 > div {
-        flex-direction: column; } }
-    .contain #slide1 > div img {
+      .contain #slide1 .wrapper {
+        flex-direction: column; }
+        .contain #slide1 .wrapper > *:last-child {
+          margin-bottom: 0; } }
+    .contain #slide1 .wrapper img {
       position: relative;
-      width: inherit;
-      max-width: 80%;
+      max-width: 70%;
       margin: auto 0 auto -32%;
       padding: 50px; }
       @media only screen and (max-width: 600px) {
-        .contain #slide1 > div img {
+        .contain #slide1 .wrapper img {
           margin: 20px auto;
-          max-width: 70%;
           padding: 0; } }
-    .contain #slide1 > div div {
+    .contain #slide1 .wrapper .description {
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 35px; }
+      padding: 20px;
+      margin: auto 20px;
+      box-shadow: 0px 1px 1px 1px #bbb; }
       @media only screen and (max-width: 600px) {
-        .contain #slide1 > div div {
-          padding: 20px; } }
+        .contain #slide1 .wrapper .description {
+          width: 95%;
+          margin: 20px auto;
+          padding: 10px; } }
   .contain #slide1 p {
     font-family: "Nunito", sans-serif;
     font-size: 1.1em; }
@@ -224,15 +228,8 @@ header {
     .contain #slide1 p:last-child {
       margin-bottom: auto; }
   .contain #slide-bg1 {
-    background: url(../images/building-bg2.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    margin-top: 90px;
-    position: relative;
-    z-index: 1; }
-    @media only screen and (max-width: 600px) {
-      .contain #slide-bg1 {
-        margin: 0; } }
+    background: url(../images/building-bg2.jpg) fixed;
+    background-size: cover; }
   .contain #slide2 {
     height: 1000px; }
     @media only screen and (max-width: 600px) {
@@ -317,7 +314,8 @@ header {
       margin-bottom: 10px;
       display: flex;
       flex-direction: column;
-      background: linear-gradient(to left, #536668, #859091);
+      box-shadow: 0px 1px 1px 1px #bbb;
+      background-color: #ddd;
       border-radius: 0 3px 3px 0;
       opacity: 0; }
       @media only screen and (max-width: 600px) {
@@ -354,29 +352,21 @@ header {
         width: 100%; }
     .contain #slide2 .chart-label {
       padding-left: 10px;
-      color: white;
       margin: auto 0; }
       @media only screen and (max-width: 600px) {
         .contain #slide2 .chart-label {
           font-weight: normal; } }
   .contain #slide-bg2 {
-    background: url(../images/map-items.jpeg);
-    background-attachment: fixed;
-    background-size: cover;
-    margin-top: 90px;
-    position: relative;
-    z-index: 1; }
-    @media only screen and (max-width: 600px) {
-      .contain #slide-bg2 {
-        margin-top: 25px; } }
+    background: url(../images/map-items.jpeg) fixed;
+    background-size: cover; }
   .contain #slide3 {
-    height: auto;
+    height: 100%;
     font-family: "Nunito", sans-serif; }
-    .contain #slide3 > div {
+    .contain #slide3 .wrapper {
       display: flex;
       flex-direction: column;
       height: 100%; }
-      .contain #slide3 > div .projects-description {
+      .contain #slide3 .wrapper .projects-description {
         font-size: 1.2em;
         display: flex;
         flex-direction: column;
@@ -384,104 +374,106 @@ header {
         padding: 0;
         margin: 20px auto; }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 > div .projects-description {
+          .contain #slide3 .wrapper .projects-description {
             width: 80%;
-            padding: 45px 25px 0;
-            margin: 0 auto; } }
+            padding: 0 25px;
+            margin: 45px auto; } }
         @media only screen and (min-width: 1025px) {
-          .contain #slide3 > div .projects-description {
+          .contain #slide3 .wrapper .projects-description {
             width: 100%;
             padding: 0 25px;
             margin: 45px auto; } }
-        .contain #slide3 > div .projects-description p {
+        .contain #slide3 .wrapper .projects-description p {
           margin-top: 0px; }
-        .contain #slide3 > div .projects-description p:last-child {
+        .contain #slide3 .wrapper .projects-description p:last-child {
           margin-bottom: 0px; }
-      .contain #slide3 > div .projects {
+      .contain #slide3 .wrapper .projects {
         position: relative;
         width: 95%;
         padding: 0;
         margin: 0 auto; }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 > div .projects {
+          .contain #slide3 .wrapper .projects {
             width: 80%;
-            padding: 25px;
+            padding: 0 25px;
             margin: 0 auto; } }
         @media only screen and (min-width: 1025px) {
-          .contain #slide3 > div .projects {
+          .contain #slide3 .wrapper .projects {
             width: 100%;
-            padding: 25px;
+            padding: 0 25px;
             margin: 0 auto;
             column-count: 2;
             column-gap: 1em;
             margin-top: -7px; } }
-      .contain #slide3 > div .project {
+      .contain #slide3 .wrapper .project {
         display: inline-block;
         width: 100%;
         padding: 10px;
         margin-bottom: 20px;
         box-shadow: 0px 1px 1px 1px #bbb;
         transition: box-shadow 0.3s; }
+        .contain #slide3 .wrapper .project:last-child {
+          margin-bottom: 0; }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 > div .project {
-            padding: 10px 10px 0;
-            margin-top: 7px;
-            margin-bottom: 15px; } }
+          .contain #slide3 .wrapper .project {
+            padding: 10px;
+            margin-bottom: 20px; } }
         @media only screen and (min-width: 1025px) {
-          .contain #slide3 > div .project {
+          .contain #slide3 .wrapper .project {
             padding: 10px 10px 0;
             margin-top: 7px;
             margin-bottom: 15px; } }
         @media (hover: hover) {
-          .contain #slide3 > div .project:hover {
+          .contain #slide3 .wrapper .project:hover {
             box-shadow: 0px 2px 10px 1px #bbb; } }
-        .contain #slide3 > div .project .project-img {
+        .contain #slide3 .wrapper .project .project-img {
           position: relative;
           height: 120px;
           opacity: 0.8; }
-        .contain #slide3 > div .project p.project-title {
+        .contain #slide3 .wrapper .project p.project-title {
           font-size: 0.9em;
           font-weight: bold;
           color: #555;
           margin: 5px 0;
           padding: 0; }
           @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 > div .project p.project-title {
+            .contain #slide3 .wrapper .project p.project-title {
+              margin: 5px 0;
+              padding: 0; } }
+          @media only screen and (min-width: 1025px) {
+            .contain #slide3 .wrapper .project p.project-title {
               margin: 5px 0 0;
               padding: 0; } }
-          @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 > div .project p.project-title {
-              margin: 5px 0 0;
-              padding: 0; } }
-        .contain #slide3 > div .project p.project-caption {
+        .contain #slide3 .wrapper .project p.project-caption {
           font-size: 0.85em;
           color: #777;
           margin: 0; }
           @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 > div .project p.project-caption {
+            .contain #slide3 .wrapper .project p.project-caption {
+              margin: 0; } }
+          @media only screen and (min-width: 1025px) {
+            .contain #slide3 .wrapper .project p.project-caption {
               margin: 3px 0 5px; } }
-          @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 > div .project p.project-caption {
-              margin: 3px 0 5px; } }
-      .contain #slide3 > div #introversed-brackets-theme .project-img {
+      .contain #slide3 .wrapper #introversed-brackets-theme .project-img {
         background: url(../images/introversed-brackets-theme-bg.png);
         background-size: cover; }
-      .contain #slide3 > div #personal-website .project-img {
+      .contain #slide3 .wrapper #personal-website .project-img {
         background: url(../images/website-bg.png);
         background-size: cover; }
-      .contain #slide3 > div #introversed-portfolio-theme-1 .project-img {
+      .contain #slide3 .wrapper #introversed-portfolio-theme-1 .project-img {
         background: url(../images/introversed-portfolio-theme-1.png);
         background-size: cover; }
   .contain #slide4 {
-    height: auto;
-    margin-top: 20px; }
-    .contain #slide4 > div {
+    height: 100%; }
+    .contain #slide4 .wrapper {
       display: flex;
       flex-direction: column;
       font-family: "Nunito", sans-serif; }
       @media only screen and (min-width: 1025px) {
-        .contain #slide4 > div {
+        .contain #slide4 .wrapper {
           flex-direction: row; } }
+      .contain #slide4 .wrapper > *:last-child {
+        margin-bottom: 0; }
     .contain #slide4 .description {
       font-size: 1.2em;
       display: flex;
@@ -491,37 +483,32 @@ header {
       margin: 20px auto; }
       @media only screen and (min-width: 601px) and (max-width: 1024px) {
         .contain #slide4 .description {
-          width: 70%;
-          padding: 25px;
-          margin: 0 auto; } }
+          width: 80%;
+          padding: 0 25px;
+          margin: 45px auto; } }
       @media only screen and (min-width: 1025px) {
         .contain #slide4 .description {
           width: 60%;
           padding: 25px;
           margin: 0 auto; } }
       .contain #slide4 .description p {
-        margin-top: 0;
-        margin-bottom: 25px; }
+        margin: 0 0 20px; }
       .contain #slide4 .description p:first-child {
         margin-top: auto; }
       .contain #slide4 .description p:last-child {
         margin-bottom: auto; }
-      .contain #slide4 .description img {
-        width: inherit;
-        max-width: 50%;
-        right: 0; }
     .contain #slide4 .contact-group {
       font-weight: bold;
       display: flex;
       flex-direction: column;
       width: 95%;
       padding: 0;
-      margin: 20px auto; }
+      margin: 0 auto; }
       @media only screen and (min-width: 601px) and (max-width: 1024px) {
         .contain #slide4 .contact-group {
-          width: 70%;
-          padding: 25px;
-          margin: 0 auto; } }
+          width: 80%;
+          padding: 0 25px;
+          margin: 0 auto 45px; } }
       @media only screen and (min-width: 1025px) {
         .contain #slide4 .contact-group {
           width: 40%;
@@ -539,6 +526,8 @@ header {
       @media (hover: hover) {
         .contain #slide4 .contact-single:hover {
           box-shadow: 0px 2px 10px 1px #bbb; } }
+      .contain #slide4 .contact-single:last-child {
+        margin-bottom: 0; }
       .contain #slide4 .contact-single .fa {
         margin: 0 30px 0 10px; }
       .contain #slide4 .contact-single .fa-envelope {
@@ -547,7 +536,7 @@ header {
 footer {
   bottom: 0;
   height: 75px;
-  margin-top: 0px;
+  margin-top: 30px;
   padding: 25px;
   display: flex;
   flex-direction: column;

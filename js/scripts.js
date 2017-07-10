@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
     
     $(window).scroll(function () {
         var currentScrollTop = $(window).scrollTop();
-        $('.bgoverlay').css('opacity', currentScrollTop/$('.bgoverlay').height()*0.5);
+        $('.bgoverlay').css('opacity', currentScrollTop/$('.bgoverlay').height()*0.8);
     });
     
     window.setTimeout(function() {
@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
 	
 	
     $("#slide1").waypoint(function() {
-        $(".fa-angle-down").removeClass("infinite bounce").animateCssInvisible("zoomOut");
+        $(".contain > .fa").removeClass("infinite bounce").animateCssInvisible("zoomOut");
         $(this).find('.description').setAnimationDuration(1.2, -.3);
         $(this).animateCssStages("fadeInUp");
     }, {offset: '50%'});
