@@ -38,7 +38,12 @@ $breakpoint-medium: "only screen and (min-width: " + $tablet-width + "px) and (m
     }
 }
 
-
+@mixin img-circle($width: none, $min-width: none, $max-width: none) {
+	width: #{$width};
+	min-width: #{$min-width};
+	max-width: #{$max-width};
+	border-radius: 50%;
+}
 
 @mixin respond-to($media) {
 	@if $media == phones {

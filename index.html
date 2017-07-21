@@ -8,6 +8,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,700|Patua+One" rel="stylesheet">
         
+		<script src="https://use.fontawesome.com/96d2d78bd5.js"></script>
         <link rel="stylesheet" href="stylesheets/normalize.css" type="text/css" media="screen">
         <link rel="stylesheet" href="stylesheets/main.css" type="text/css" media="screen">
         
@@ -17,17 +18,18 @@
     <body>
         <header data-stellar-background-ratio="0.5">
 <!--            &nbsp;-->
+            <div class="bgoverlay"></div>
             <div id="slide0" class="content container" data-stellar-ratio="0.7">
                 <img class="img-circle" src="images/profile.jpg" alt="profile-image">
                 <h1>Mohsin Ismail</h1>
-                <p>Software Engineer &times; Web Designer &times; Front-end Developer</p>
-                <div id="icons">
-                    <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-                </div>
+                <p>Software Engineer <b>&times;</b> Programmer <b>&times;</b> Web Developer</p>
+                <ul id="icons">
+					<a href="mailto:mhismail3@gmail.com" target="_blank"><i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://www.linkedin.com/in/mhismail3/" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+					<a href="https://github.com/mhismail3" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+                </ul>
             </div>
-            <div class="bgoverlay"></div>
+
         </header>
         
         <div class="contain">
@@ -37,12 +39,18 @@
             <div id="slide1" data-slide="1" class="slide container invisible">
                 <h2 class="primary">About me.</h2>
                 <div class="wrapper">
-                    <img src="images/monitor2.png" alt="monitor-image" class="primary">
+                    <img src="images/monitor.png" alt="monitor-image" class="primary">
                     <div class="description">
                         <p class="secondary">I'm a Biomedical engineer getting my Master's Degree in Software Engineering.</p>
                         <p class="secondary">I'm passionate about designing beautiful, easy-to-use UI / UX interfaces for the web and mobile applications.</p>
                         <p class="secondary">I always look to the future when it comes to technologies and best practices that will keep me at the forefront of the tech industry.</p>
                         <p class="secondary"><b>The mission:</b> to design and code solutions that people want to use and have practical use in a variety of fields.</p>
+						<a href="files/Resume.pdf" download="Mohsin_Ismail_Resume" target="_blank">
+							<div class="contact-single secondary">
+								<i class="fa fa-download fa-lg" aria-hidden="true"></i>
+								<p>Download a copy of my Resume.</p>
+							</div>
+						</a>
                     </div>
                 </div>
             </div>
@@ -206,7 +214,7 @@
                 <div class="wrapper">
                     <div class="projects-description primary">
                         <p>Check out some of the things that I've been working on lately.</p>
-                        <p>You can find more of my work and source code at my GitHub page.</p>
+						<p>You can find more of my work and source code at my <a href="https://github.com/mhismail3" target="_blank">GitHub page.</a></p>
                     </div>
                     <div class="projects">
                         <div id="introversed-brackets-theme" class="project secondary">
@@ -230,7 +238,7 @@
             
             
             <div id="slide4" data-slide="4" class="slide container invisible">
-                <h2 class="primary">Get in touch.</h2>
+                <h2 class="secondary">Get in touch.</h2>
                 <div class="wrapper">
 					<div class="description">
                         <p class="secondary"><b>New ideas are my specialty.</b></p>
@@ -238,30 +246,42 @@
 <!--						<img src="images/face-filtered.png">-->
                     </div>
                     <div class="contact-group">
-                        <div class="contact-single primary">
-                            <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
-                            <p>Email me.</p>
-                        </div>
-                        <div class="contact-single primary">
-                            <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
-                            <p>Connect with me on LinkedIn.</p>
-                        </div>
-                        <div class="contact-single primary">
-                            <i class="fa fa-github fa-lg" aria-hidden="true"></i>
-                            <p>Check out my GitHub.</p>
-                        </div>
-                        <div class="contact-single primary">
-                            <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
-                            <p>Find me on Facebook.</p>
-                        </div>
-                        <div class="contact-single primary">
-                            <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
-                            <p>Follow me on Twitter.</p>
-                        </div>
-                        <div class="contact-single primary">
-                            <i class="fa fa-tree fa-lg" aria-hidden="true"></i>
-                            <p>Send me a carrier pidgeon.</p>
-                        </div>
+                        <a href="mailto:mhismail3@gmail.com" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+								<p>Email me.</p>
+                        	</div>
+						</a>
+                        <a href="https://www.linkedin.com/in/mhismail3/" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
+								<p>Connect with me on LinkedIn.</p>
+							</div>
+						</a>
+                        <a href="https://github.com/mhismail3" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-github fa-lg" aria-hidden="true"></i>
+								<p>Check out my GitHub.</p>
+							</div>
+						</a>
+                        <a href="https://www.facebook.com/moosuf" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i>
+								<p>Find me on Facebook.</p>
+							</div>
+						</a>
+                        <a href="https://twitter.com/moosuf" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+								<p>Follow me on Twitter.</p>
+							</div>
+						</a>
+                        <a href="http://pigeongram.com/" target="_blank" class="primary">
+							<div class="contact-single">
+								<i class="fa fa-tree fa-lg" aria-hidden="true"></i>
+								<p>Send me a carrier pidgeon.</p>
+							</div>
+						</a>
                     </div>
                 </div>
             </div>
@@ -293,6 +313,5 @@
 		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
-        <script src="https://use.fontawesome.com/a0d680fd61.js"></script>
     </body>
 </html>
