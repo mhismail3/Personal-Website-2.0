@@ -16,10 +16,10 @@
     </head>
 
     <body>
+		
         <header data-stellar-background-ratio="0.5">
-<!--            &nbsp;-->
             <div class="bgoverlay"></div>
-            <div id="slide0" class="content container" data-stellar-ratio="0.7">
+            <div id="header-content" class="content container" data-stellar-ratio="0.7">
                 <img class="img-circle" src="images/profile.jpg" alt="profile-image">
                 <h1>Mohsin Ismail</h1>
                 <p>Software Engineer <b>&times;</b> Programmer <b>&times;</b> Web Developer</p>
@@ -29,14 +29,13 @@
 					<a href="https://github.com/mhismail3" target="_blank"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
                 </ul>
             </div>
-
         </header>
         
-        <div class="contain">
+        <div class="content-wrapper">
             
             <i class="fa fa-hand-o-down fa-2x fade-in-on-load invisible animated infinite bounce" aria-hidden="true"></i>
             
-            <div id="slide1" data-slide="1" class="slide container invisible">
+            <div id="about-me" data-slide="1" class="slide container invisible">
                 <h2 class="primary">About me.</h2>
                 <div class="wrapper">
                     <img src="images/monitor.png" alt="monitor-image" class="primary">
@@ -55,12 +54,11 @@
                 </div>
             </div>
 
-<!--            THIS IS THE REASON WHY THE ABOVE ANIMATION SO SLOW-->
+
             <div id="slide-bg1" class="slide-bg" data-stellar-background-ratio="0.5"></div>
             
             
-<!--            add animated to slide2-->
-            <div id="slide2" data-slide="2" class="invisible slide container">
+            <div id="experience" data-slide="2" class="invisible slide container">
                 <h2>Experience.</h2>
                 
                 <div class="skills">
@@ -209,7 +207,7 @@
             <div id="slide-bg2" class="slide-bg" data-stellar-background-ratio="0.5"></div>
             
             
-            <div id="slide3" data-slide="3" class="invisible slide container animated">
+            <div id="projects" data-slide="3" class="invisible slide container animated">
                 <h2 class="primary">Projects.</h2>
                 <div class="wrapper">
                     <div class="projects-description primary">
@@ -237,13 +235,13 @@
             </div>
             
             
-            <div id="slide4" data-slide="4" class="slide container invisible">
+            <div id="get-in-touch" data-slide="4" class="slide container invisible">
                 <h2 class="secondary">Get in touch.</h2>
                 <div class="wrapper">
 					<div class="description">
                         <p class="secondary"><b>New ideas are my specialty.</b></p>
 						<p class="secondary">If you have an idea you would like to share, or if you would like to work on something together, contact me.</p>
-<!--						<img src="images/face-filtered.png">-->
+
                     </div>
                     <div class="contact-group">
                         <a href="mailto:mhismail3@gmail.com" target="_blank" class="primary">
@@ -287,23 +285,16 @@
             </div>
         
             <footer>
-                <div class="container">
+                <div class="wrapper container">
                     <p>&copy; Mohsin Ismail 2017</p>
                     <i class="fa fa-hand-o-up fa-lg fade-in-on-load animated infinite pulse" onclick="scrollToTop()" aria-hidden="true"></i>
-<!--
-                    <div id="icons">
-                        <i class="fa fa-envelope-square fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
-                    </div>
--->
+
                     <p class="right-hidden">&copy; Mohsin Ismail 2017</p>
                 </div>
             </footer>
             
         </div>
         
-
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
         <script type="text/javascript" src="js/jquery.stellar.min.js"></script> 
@@ -313,5 +304,6 @@
 		<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
+		
     </body>
 </html>

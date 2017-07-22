@@ -91,6 +91,10 @@ img {
 html {
   height: 100%; }
 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 85%; } }
+
 .container {
   width: 95%;
   max-width: 1200px;
@@ -99,488 +103,437 @@ html {
 .invisible {
   opacity: 0; }
 
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 85%; } }
-
 header {
-  background: url(../images/brick-bg.png) repeat;
   height: 550px;
   width: 100%;
+  background: url(../images/brick-bg.png) repeat;
   display: flex;
   flex-direction: column; }
   @media only screen and (max-width: 600px) {
     header {
       height: 100%; } }
-  header .content {
+  header .bgoverlay {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0;
+    position: absolute; }
+  header #header-content {
+    position: relative;
+    text-align: center;
     margin: 40px 10px;
-    text-align: center; }
+    padding: 10px 0; }
     @media only screen and (min-width: 601px) and (max-width: 1024px) {
-      header .content {
+      header #header-content {
         margin: auto auto 80px; } }
     @media only screen and (min-width: 1025px) {
-      header .content {
+      header #header-content {
         margin: auto auto 80px;
         text-align: inherit; } }
-    header .content > *:not(:first-child) {
+    header #header-content > *:not(:first-child) {
       margin: 10px 0; }
-    header .content .img-circle {
+    header #header-content .img-circle {
       width: 11%;
       min-width: 80px;
       max-width: 140px;
       border-radius: 50%; }
-    header .content h1 {
+    header #header-content h1 {
       font-family: "Patua One", sans-serif;
       font-size: 3em;
       color: #555;
       line-height: 1em; }
-    header .content p {
+    header #header-content p {
       font-family: "Nunito", sans-serif;
-      font-size: 1.2em; }
-    header .content #icons {
+      font-size: 1.2em;
+      color: #222; }
+      header #header-content p b {
+        font-size: 1.2em;
+        color: #555; }
+    header #header-content #icons {
       display: inline;
       color: #555; }
-      header .content #icons .fa {
+      header #header-content #icons .fa {
         margin-right: 8px;
         transition: transform 0.2s cubic-bezier(0.22, 0.64, 0.29, 1.6), color 0.2s cubic-bezier(0.22, 0.64, 0.29, 1.6); }
         @media (hover: hover) {
-          header .content #icons .fa:hover {
+          header #header-content #icons .fa:hover {
             transform: scale(1.1);
             color: #222; } }
-      header .content #icons .fa-github-square {
+      header #header-content #icons .fa-github-square {
         margin-right: 0; }
-  header .bgoverlay {
-    background-color: black;
-    opacity: 0;
-    position: absolute;
-    height: 100%;
-    width: 100%; }
 
-.contain {
+.content-wrapper {
+  font-family: "Nunito", sans-serif;
   position: absolute;
   width: 100%;
   background-color: #f9f9f9;
   box-shadow: 0px 1px 5px 1px #555; }
-  .contain > .fa {
+  .content-wrapper > .fa {
     color: #555;
     position: fixed;
     left: 47%;
     bottom: 15%; }
-  .contain p a {
+  .content-wrapper p a {
     font-weight: bold; }
-    .contain p a:hover {
+    .content-wrapper p a:hover {
       text-decoration: underline; }
-  .contain .slide {
+  .content-wrapper .slide {
     position: relative;
-    height: 600px;
-    margin-top: 80px;
+    height: 100%;
+    margin: 80px auto;
     display: flex;
     flex-direction: column; }
     @media only screen and (max-width: 600px) {
-      .contain .slide {
-        margin-top: 30px; } }
-    .contain .slide h2 {
+      .content-wrapper .slide {
+        margin: 40px auto; } }
+    .content-wrapper .slide h2 {
       font-family: "Patua One", sans-serif;
       font-size: 2.5em;
       color: #555;
       text-align: center;
       border-bottom: 1px solid #ccc; }
       @media only screen and (min-width: 1025px) {
-        .contain .slide h2 {
+        .content-wrapper .slide h2 {
           text-align: inherit; } }
-  .contain .slide-bg {
+  .content-wrapper .slide-bg {
     height: 500px;
-    margin-top: 60px;
     position: relative;
     z-index: 1; }
     @media only screen and (max-width: 600px) {
-      .contain .slide-bg {
-        height: 300px;
-        margin-top: 30px; } }
+      .content-wrapper .slide-bg {
+        height: 300px; } }
+
+#about-me .wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0 0; }
   @media only screen and (max-width: 600px) {
-    .contain #slide1 {
-      height: 100%; } }
-  .contain #slide1 .wrapper {
-    font-family: "Nunito", sans-serif;
-    display: flex;
-    flex-direction: row; }
+    #about-me .wrapper {
+      flex-direction: column; } }
+  #about-me .wrapper img {
+    max-width: 70%;
+    max-height: 500px;
+    position: relative;
+    margin: auto 0 auto -32%; }
     @media only screen and (max-width: 600px) {
-      .contain #slide1 .wrapper {
-        flex-direction: column; }
-        .contain #slide1 .wrapper > *:last-child {
-          margin-bottom: 0; } }
-    .contain #slide1 .wrapper img {
-      position: relative;
-      max-width: 70%;
-      margin: auto 0 auto -32%;
-      padding: 50px; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide1 .wrapper img {
-          margin: 20px auto;
-          padding: 0; } }
-    .contain #slide1 .wrapper .description {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      padding: 20px;
-      margin: auto 20px auto 20px; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide1 .wrapper .description {
-          width: 95%;
-          margin: 20px auto;
-          padding: 10px; } }
-  .contain #slide1 .description > p {
-    font-family: "Nunito", sans-serif;
-    font-size: 1.1em;
-    margin: 0 0 35px 0; }
-    @media only screen and (min-width: 1025px) {
-      .contain #slide1 .description > p {
-        font-size: 1.2em; } }
-  .contain #slide1 .contact-single {
-    font-weight: bold;
-    display: flex;
+      #about-me .wrapper img {
+        margin: 15px auto;
+        padding: 0; } }
+  #about-me .wrapper .description {
     width: 100%;
-    height: 60px;
-    padding: 10px;
-    align-items: center;
-    margin: 0;
-    box-shadow: 0px 1px 1px 1px #bbb;
-    transition: all 0.3s; }
-    @media (hover: hover) {
-      .contain #slide1 .contact-single:hover {
-        box-shadow: 0px 2px 10px 1px #bbb;
-        background-color: #eee; } }
-    @media only screen and (min-width: 1025px) {
-      .contain #slide1 .contact-single {
-        width: 60%; } }
-    .contain #slide1 .contact-single .fa {
-      margin: 0 30px 0 10px; }
-  .contain #slide-bg1 {
-    background: url(../images/building-bg.jpg) fixed;
-    background-size: cover; }
-  .contain #slide2 {
-    height: 1000px; }
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto 25px auto 45px; }
     @media only screen and (max-width: 600px) {
-      .contain #slide2 {
-        height: 550px; } }
-    .contain #slide2 .skills {
-      width: 85%;
-      max-width: 960px;
-      height: 100%;
-      margin: auto;
-      padding-top: 15px;
-      position: relative; }
-    .contain #slide2 .lines {
-      height: 95%;
-      position: relative; }
-      .contain #slide2 .lines .line {
-        height: 100%;
-        width: 2px;
-        position: absolute;
-        background: rgba(221, 221, 221, 0.6); }
-        .contain #slide2 .lines .line.l--0 {
-          left: 0; }
-        .contain #slide2 .lines .line.l--25 {
-          left: 25%; }
-        .contain #slide2 .lines .line.l--50 {
-          left: 50%; }
-        .contain #slide2 .lines .line.l--75 {
-          left: 75%; }
-        .contain #slide2 .lines .line.l--100 {
-          left: calc(100% - 1px); }
-        .contain #slide2 .lines .line .line-label {
-          font-family: "Nunito", sans-serif;
-          display: block;
-          width: 130px;
-          text-align: center;
-          position: absolute;
-          bottom: -20px;
-          right: -65px; }
-          @media only screen and (max-width: 600px) {
-            .contain #slide2 .lines .line .line-label {
-              font-size: 0.8em;
-              font-weight: bold;
-              width: 90px;
-              right: -45px; } }
-          .contain #slide2 .lines .line .line-label.title {
-            text-transform: uppercase;
-            font-weight: bold; }
-    .contain #slide2 .charts {
-      font-family: "Nunito", sans-serif;
-      font-weight: bold;
-      width: 85%;
-      max-width: 960px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 80px auto 0; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide2 .charts {
-          margin-top: 65px; } }
-    .contain #slide2 .chart {
-      margin-top: 20px; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide2 .chart {
-          margin-top: 10px; } }
-      .contain #slide2 .chart:first-child {
-        margin: 0; }
-    .contain #slide2 .chart-title {
-      display: block;
-      margin: 0 0 10px;
+      #about-me .wrapper .description {
+        width: 95%;
+        margin: 20px auto; } }
+    #about-me .wrapper .description > p {
       font-size: 1.1em;
-      font-weight: bold;
-      opacity: 0; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide2 .chart-title {
-          margin-bottom: 5px; } }
-    .contain #slide2 .chart-horiz {
-      overflow: hidden; }
-    .contain #slide2 .chart-bar {
-      height: 50px;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0px 1px 1px 1px #bbb;
-      background-color: #ddd;
-      border-radius: 0 3px 3px 0;
-      opacity: 0; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide2 .chart-bar {
-          height: 25px;
-          margin-bottom: 7px; } }
-      .contain #slide2 .chart-bar[data-skill='35'] {
-        width: 35%; }
-      .contain #slide2 .chart-bar[data-skill='40'] {
-        width: 40%; }
-      .contain #slide2 .chart-bar[data-skill='45'] {
-        width: 45%; }
-      .contain #slide2 .chart-bar[data-skill='50'] {
-        width: 50%; }
-      .contain #slide2 .chart-bar[data-skill='55'] {
-        width: 55%; }
-      .contain #slide2 .chart-bar[data-skill='60'] {
-        width: 60%; }
-      .contain #slide2 .chart-bar[data-skill='65'] {
-        width: 65%; }
-      .contain #slide2 .chart-bar[data-skill='70'] {
-        width: 70%; }
-      .contain #slide2 .chart-bar[data-skill='75'] {
-        width: 75%; }
-      .contain #slide2 .chart-bar[data-skill='80'] {
-        width: 80%; }
-      .contain #slide2 .chart-bar[data-skill='85'] {
-        width: 85%; }
-      .contain #slide2 .chart-bar[data-skill='90'] {
-        width: 90%; }
-      .contain #slide2 .chart-bar[data-skill='95'] {
-        width: 95%; }
-      .contain #slide2 .chart-bar[data-skill='100'] {
-        width: 100%; }
-    .contain #slide2 .chart-label {
-      padding-left: 10px;
-      margin: auto 0; }
-      @media only screen and (max-width: 600px) {
-        .contain #slide2 .chart-label {
-          font-weight: normal; } }
-  .contain #slide-bg2 {
-    background: url(../images/map-items.jpeg) fixed;
-    background-size: cover; }
-  .contain #slide3 {
+      margin: 0 0 35px 0; }
+      @media only screen and (min-width: 1025px) {
+        #about-me .wrapper .description > p {
+          font-size: 1.2em; } }
+#about-me .contact-single {
+  font-weight: bold;
+  display: flex;
+  height: 60px;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0px 1px 1px 1px #bbb;
+  transition: box-shadow 0.3s, background-color 0.3s; }
+  @media (hover: hover) {
+    #about-me .contact-single:hover {
+      box-shadow: 0px 2px 10px 1px #bbb;
+      background-color: #eee; } }
+  @media only screen and (min-width: 1025px) {
+    #about-me .contact-single {
+      width: 60%; } }
+  #about-me .contact-single .fa {
+    margin: 0 30px 0 10px; }
+
+#slide-bg1 {
+  background: url(../images/building-bg.jpg) fixed;
+  background-size: cover; }
+
+#experience {
+  height: 1000px; }
+  @media only screen and (max-width: 600px) {
+    #experience {
+      height: 550px; } }
+  #experience .skills {
+    width: 85%;
+    max-width: 960px;
     height: 100%;
-    font-family: "Nunito", sans-serif; }
-    .contain #slide3 .wrapper {
-      display: flex;
-      flex-direction: column;
-      height: 100%; }
-      .contain #slide3 .wrapper .projects-description {
-        font-size: 1.2em;
-        display: flex;
-        flex-direction: column;
-        width: 95%;
-        padding: 0;
-        margin: 20px auto; }
-        @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 .wrapper .projects-description {
-            width: 80%;
-            padding: 0 25px;
-            margin: 45px auto; } }
-        @media only screen and (min-width: 1025px) {
-          .contain #slide3 .wrapper .projects-description {
-            width: 100%;
-            padding: 0 25px;
-            margin: 45px auto; } }
-        .contain #slide3 .wrapper .projects-description p {
-          margin-top: 0px; }
-        .contain #slide3 .wrapper .projects-description p:last-child {
-          margin-bottom: 0px; }
-      .contain #slide3 .wrapper .projects {
-        position: relative;
-        width: 95%;
-        padding: 0;
-        margin: 0 auto; }
-        @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 .wrapper .projects {
-            width: 80%;
-            padding: 0 25px;
-            margin: 0 auto; } }
-        @media only screen and (min-width: 1025px) {
-          .contain #slide3 .wrapper .projects {
-            width: 100%;
-            padding: 0 25px;
-            margin: 0 auto;
-            column-count: 2;
-            column-gap: 1em;
-            margin-top: -7px; } }
-      .contain #slide3 .wrapper .project {
-        display: inline-block;
+    margin: auto;
+    padding-top: 15px;
+    position: relative; }
+  #experience .lines {
+    height: 95%;
+    position: relative; }
+    #experience .lines .line {
+      height: 100%;
+      width: 2px;
+      position: absolute;
+      background: rgba(221, 221, 221, 0.6); }
+      #experience .lines .line.l--0 {
+        left: 0; }
+      #experience .lines .line.l--25 {
+        left: 25%; }
+      #experience .lines .line.l--50 {
+        left: 50%; }
+      #experience .lines .line.l--75 {
+        left: 75%; }
+      #experience .lines .line.l--100 {
+        left: calc(100% - 1px); }
+      #experience .lines .line .line-label {
+        display: block;
+        width: 130px;
+        text-align: center;
+        position: absolute;
+        bottom: -20px;
+        right: -65px; }
+        @media only screen and (max-width: 600px) {
+          #experience .lines .line .line-label {
+            font-size: 0.8em;
+            font-weight: bold;
+            width: 90px;
+            right: -45px; } }
+        #experience .lines .line .line-label.title {
+          text-transform: uppercase;
+          font-weight: bold; }
+  #experience .charts {
+    font-weight: bold;
+    width: 85%;
+    max-width: 960px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 80px auto 0; }
+    @media only screen and (max-width: 600px) {
+      #experience .charts {
+        margin-top: 65px; } }
+  #experience .chart {
+    margin-top: 20px; }
+    @media only screen and (max-width: 600px) {
+      #experience .chart {
+        margin-top: 10px; } }
+    #experience .chart:first-child {
+      margin: 0; }
+  #experience .chart-title {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    opacity: 0; }
+    @media only screen and (max-width: 600px) {
+      #experience .chart-title {
+        margin-bottom: 5px; } }
+  #experience .chart-horiz {
+    overflow: hidden; }
+  #experience .chart-bar {
+    height: 50px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 1px 1px #bbb;
+    background-color: #ddd;
+    border-radius: 0 3px 3px 0;
+    opacity: 0; }
+    @media only screen and (max-width: 600px) {
+      #experience .chart-bar {
+        height: 25px;
+        margin-bottom: 7px; } }
+    #experience .chart-bar[data-skill='35'] {
+      width: 35%; }
+    #experience .chart-bar[data-skill='40'] {
+      width: 40%; }
+    #experience .chart-bar[data-skill='45'] {
+      width: 45%; }
+    #experience .chart-bar[data-skill='50'] {
+      width: 50%; }
+    #experience .chart-bar[data-skill='55'] {
+      width: 55%; }
+    #experience .chart-bar[data-skill='60'] {
+      width: 60%; }
+    #experience .chart-bar[data-skill='65'] {
+      width: 65%; }
+    #experience .chart-bar[data-skill='70'] {
+      width: 70%; }
+    #experience .chart-bar[data-skill='75'] {
+      width: 75%; }
+    #experience .chart-bar[data-skill='80'] {
+      width: 80%; }
+    #experience .chart-bar[data-skill='85'] {
+      width: 85%; }
+    #experience .chart-bar[data-skill='90'] {
+      width: 90%; }
+    #experience .chart-bar[data-skill='95'] {
+      width: 95%; }
+    #experience .chart-bar[data-skill='100'] {
+      width: 100%; }
+  #experience .chart-label {
+    padding-left: 10px;
+    margin: auto 0; }
+    @media only screen and (max-width: 600px) {
+      #experience .chart-label {
+        font-weight: normal; } }
+
+#slide-bg2 {
+  background: url(../images/map-items.jpeg) fixed;
+  background-size: cover; }
+
+#projects .wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0; }
+  #projects .wrapper .projects-description {
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 0;
+    margin: 20px auto; }
+    @media only screen and (min-width: 1025px) {
+      #projects .wrapper .projects-description {
         width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0px 1px 1px 1px #bbb;
-        transition: box-shadow 0.3s; }
-        .contain #slide3 .wrapper .project:last-child {
-          margin-bottom: 0; }
-        @media only screen and (min-width: 601px) and (max-width: 1024px) {
-          .contain #slide3 .wrapper .project {
-            padding: 10px;
-            margin-bottom: 20px; } }
-        @media only screen and (min-width: 1025px) {
-          .contain #slide3 .wrapper .project {
-            padding: 10px 10px 0;
-            margin-top: 7px;
-            margin-bottom: 15px; } }
-        @media (hover: hover) {
-          .contain #slide3 .wrapper .project:hover {
-            box-shadow: 0px 2px 10px 1px #bbb; } }
-        .contain #slide3 .wrapper .project .project-img {
-          position: relative;
-          height: 120px;
-          opacity: 0.8; }
-        .contain #slide3 .wrapper .project p.project-title {
-          font-size: 0.9em;
-          font-weight: bold;
-          color: #555;
-          margin: 5px 0;
-          padding: 0; }
-          @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 .wrapper .project p.project-title {
-              margin: 5px 0;
-              padding: 0; } }
-          @media only screen and (min-width: 1025px) {
-            .contain #slide3 .wrapper .project p.project-title {
-              margin: 5px 0 0;
-              padding: 0; } }
-        .contain #slide3 .wrapper .project p.project-caption {
-          font-size: 0.85em;
-          color: #777;
-          margin: 0; }
-          @media only screen and (min-width: 601px) and (max-width: 1024px) {
-            .contain #slide3 .wrapper .project p.project-caption {
-              margin: 0; } }
-          @media only screen and (min-width: 1025px) {
-            .contain #slide3 .wrapper .project p.project-caption {
-              margin: 3px 0 5px; } }
-      .contain #slide3 .wrapper #introversed-brackets-theme .project-img {
-        background: url(../images/introversed-brackets-theme-bg.png);
-        background-size: cover; }
-      .contain #slide3 .wrapper #personal-website .project-img {
-        background: url(../images/website-bg.png);
-        background-size: cover; }
-      .contain #slide3 .wrapper #introversed-portfolio-theme-1 .project-img {
-        background: url(../images/introversed-portfolio-theme-1.png);
-        background-size: cover; }
-  .contain #slide4 {
-    height: 100%; }
-    .contain #slide4 .wrapper {
-      display: flex;
-      flex-direction: column;
-      font-family: "Nunito", sans-serif; }
-      @media only screen and (min-width: 1025px) {
-        .contain #slide4 .wrapper {
-          flex-direction: row; } }
-      .contain #slide4 .wrapper > *:last-child {
-        margin-bottom: 0; }
-    .contain #slide4 .description {
-      font-size: 1.2em;
-      display: flex;
-      flex-direction: column;
-      width: 95%;
-      padding: 0;
-      margin: 20px auto; }
-      @media only screen and (min-width: 601px) and (max-width: 1024px) {
-        .contain #slide4 .description {
-          width: 80%;
-          padding: 0 25px;
-          margin: 45px auto; } }
-      @media only screen and (min-width: 1025px) {
-        .contain #slide4 .description {
-          width: 60%;
-          padding: 25px;
-          margin: 0 auto; } }
-      .contain #slide4 .description p {
-        margin: 0 0 20px; }
-      .contain #slide4 .description p:first-child {
-        margin-top: auto; }
-      .contain #slide4 .description p:last-child {
-        margin-bottom: auto; }
-    .contain #slide4 .contact-group {
+        padding: 0 25px;
+        margin: 45px auto; } }
+    #projects .wrapper .projects-description p {
+      margin: 0 0 20px; }
+  #projects .wrapper .projects {
+    position: relative;
+    width: 95%;
+    padding: 0;
+    margin: 0 auto; }
+    @media only screen and (min-width: 1025px) {
+      #projects .wrapper .projects {
+        width: 100%;
+        padding: 0 25px;
+        margin: 0 auto;
+        column-count: 2;
+        column-gap: 1em;
+        margin-top: -7px; } }
+  #projects .wrapper .project {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 1px 1px #bbb;
+    transition: box-shadow 0.3s; }
+    @media only screen and (min-width: 1025px) {
+      #projects .wrapper .project {
+        margin-top: 7px;
+        margin-bottom: 15px; } }
+    @media (hover: hover) {
+      #projects .wrapper .project:hover {
+        box-shadow: 0px 2px 10px 1px #bbb; } }
+    #projects .wrapper .project:last-child {
+      margin-bottom: 0; }
+    #projects .wrapper .project .project-img {
+      position: relative;
+      height: 120px;
+      opacity: 0.8; }
+    #projects .wrapper .project p.project-title {
+      font-size: 0.9em;
       font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      width: 95%;
-      padding: 0;
-      margin: 0 auto; }
-      @media only screen and (min-width: 601px) and (max-width: 1024px) {
-        .contain #slide4 .contact-group {
-          width: 80%;
-          padding: 0 25px;
-          margin: 0 auto 45px; } }
-      @media only screen and (min-width: 1025px) {
-        .contain #slide4 .contact-group {
-          width: 40%;
-          padding: 25px;
-          margin: 0 auto; } }
-    .contain #slide4 a {
-      margin-bottom: 10px; }
-    .contain #slide4 .contact-single {
-      display: flex;
-      width: 100%;
-      height: 60px;
-      padding: 10px;
-      align-items: center;
-      margin: 0 auto 15px;
-      box-shadow: 0px 1px 1px 1px #bbb;
-      transition: all 0.3s; }
-      @media (hover: hover) {
-        .contain #slide4 .contact-single:hover {
-          box-shadow: 0px 2px 10px 1px #bbb;
-          background-color: #eee; } }
-      .contain #slide4 .contact-single:last-child {
-        margin-bottom: 0; }
-      .contain #slide4 .contact-single .fa {
-        margin: 0 30px 0 10px; }
-      .contain #slide4 .contact-single .fa-envelope {
-        margin-left: 8px; }
+      color: #555;
+      margin: 5px 0;
+      padding: 0; }
+    #projects .wrapper .project p.project-caption {
+      font-size: 0.85em;
+      color: #777;
+      margin: 0; }
+  #projects .wrapper #introversed-brackets-theme .project-img {
+    background: url(../images/introversed-brackets-theme-bg.png);
+    background-size: cover; }
+  #projects .wrapper #personal-website .project-img {
+    background: url(../images/website-bg.png);
+    background-size: cover; }
+  #projects .wrapper #introversed-portfolio-theme-1 .project-img {
+    background: url(../images/introversed-portfolio-theme-1.png);
+    background-size: cover; }
+
+#get-in-touch .wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0; }
+  @media only screen and (min-width: 1025px) {
+    #get-in-touch .wrapper {
+      flex-direction: row;
+      margin: 50px 0 0; } }
+#get-in-touch .description {
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 0;
+  margin: 20px auto; }
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    #get-in-touch .description {
+      width: 80%; } }
+  @media only screen and (min-width: 1025px) {
+    #get-in-touch .description {
+      width: 60%;
+      padding: 25px;
+      margin: 0 auto; } }
+  #get-in-touch .description p {
+    margin: 0 0 20px; }
+    #get-in-touch .description p:first-child {
+      margin-top: auto; }
+    #get-in-touch .description p:last-child {
+      margin-bottom: auto; }
+#get-in-touch .contact-group {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 0;
+  margin: 10px auto; }
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    #get-in-touch .contact-group {
+      width: 80%; } }
+  @media only screen and (min-width: 1025px) {
+    #get-in-touch .contact-group {
+      width: 40%;
+      padding: 25px;
+      margin: 0 auto; } }
+#get-in-touch a {
+  margin-bottom: 12px; }
+  #get-in-touch a:last-child {
+    margin-bottom: 0; }
+#get-in-touch .contact-single {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 0px 1px 1px 1px #bbb;
+  transition: box-shadow 0.3s, background-color 0.3s; }
+  @media (hover: hover) {
+    #get-in-touch .contact-single:hover {
+      box-shadow: 0px 2px 10px 1px #bbb;
+      background-color: #eee; } }
+  #get-in-touch .contact-single .fa {
+    margin: 0 30px 0 10px; }
+  #get-in-touch .contact-single .fa-envelope {
+    margin-left: 8px; }
 
 footer {
   bottom: 0;
   height: 75px;
-  margin-top: 30px;
   padding: 25px;
   display: flex;
   flex-direction: column;
-  font-family: "Nunito", sans-serif;
   background-color: #eee; }
-  footer .container {
+  footer .wrapper {
     display: flex;
     flex-direction: row;
     align-items: center; }
-  footer p {
-    padding: 0;
-    display: inline-block; }
   footer .fa {
     cursor: pointer;
     margin: 0 auto; }
