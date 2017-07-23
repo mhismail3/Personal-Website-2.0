@@ -12,6 +12,7 @@ $breakpoint-medium: "only screen and (min-width: " + $tablet-width + "px) and (m
 
 $grey: #555;
 $darkgrey: #222;
+$page-bg-color: #f1f1f1;
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
