@@ -5,6 +5,7 @@
 
 html {
     height: 100%;
+	overflow-x: hidden;
 }
 body {
 	@include respond-to(phones) {
@@ -34,7 +35,7 @@ header {
 	}
 	
     .bgoverlay {
-        height: 100%;
+        height: 200%;
         width: 100%;
         background-color: #000;
         opacity: 0;
@@ -92,6 +93,11 @@ header {
 						color: $darkgrey;
 					}
 				}
+				@include respond-to(phones) {
+					transform: scale(1.3);
+					margin-top: 7px;
+					margin-right: 15px;
+				}
             }
 			.fa-github-square {
 				margin-right: 0;
@@ -107,12 +113,13 @@ header {
     width: 100%;
     background-color: #f9f9f9;
     box-shadow: 0px 1px 5px 1px $grey;
+	overflow-x: hidden;
     
     & > .fa {
         color: #555;
         position: fixed;
-        left: 47%;
-        bottom: 15%;
+        left: 47.8%;	//FIX AT LATER DATE
+        bottom: 10%;
     }
 	p a {
 		font-weight: bold;
@@ -148,9 +155,13 @@ header {
 		height: 500px;
 		position: relative;
         z-index: 1;
+		width: 100%;
 		
 		@include respond-to(phones) {
-			height: 300px;
+			display: none;
+		}
+		@include respond-to(tablets) {
+			display: none;
 		}
 	}  
 }
@@ -230,7 +241,12 @@ header {
 
 #slide-bg1 {
 	background: url(../images/building-bg.jpg) fixed;
-	background-size: cover;
+//	background-size: contain;
+	background-size: 180%;
+	@include respond-to(laptops) {
+//		background-size: cover;
+		background-size: 100%;
+	}
 }
 
 
@@ -238,7 +254,8 @@ header {
 	height: 1000px;
 
 	@include respond-to(phones) {
-		height: 550px;
+		height: 530px;
+		margin-bottom: 80px;
 	}
 	
 	.skills {
@@ -371,7 +388,12 @@ header {
 
 #slide-bg2 {
 	background: url(../images/map-items.jpeg) fixed;
-	background-size: cover;
+//	background-size: contain;
+		background-size: 200%;
+	@include respond-to(laptops) {
+//		background-size: cover;
+		background-size: 200%;
+	}
 }
 
 

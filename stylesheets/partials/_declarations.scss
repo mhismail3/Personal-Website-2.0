@@ -5,14 +5,14 @@ $grid-columns: 12;
 $grid-max-width: 1200px;
 
 $laptop-width: 1024px;
-$tablet-width: 600px;
+$tablet-width: 750px;
 
 $breakpoint-big: "only screen and (min-width: " + $laptop-width + "px)";
 $breakpoint-medium: "only screen and (min-width: " + $tablet-width + "px) and (max-width: " + ($laptop-width - 1) + "px)";
 
 $grey: #555;
 $darkgrey: #222;
-$page-bg-color: #f1f1f1;
+$page-bg-color: #f5f5f5;
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
