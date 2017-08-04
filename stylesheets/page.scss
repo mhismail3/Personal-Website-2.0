@@ -67,17 +67,6 @@ header {
 				text-align: center;
 			}
 		}
-//		#left-icons {
-//			display: flex;
-//			margin-right: auto;
-//			
-//			.icon-container {
-//				margin-right: 10px;
-//			}
-//			.hidden {
-//				opacity: 0;
-//			}
-//		}
 		#right-icons {
 			display: flex;
 			margin-left: auto;
@@ -97,7 +86,7 @@ header {
 	min-height: 100vh;
 //	height: 2000px;
     width: 95%;
-	margin-top: 100px;
+	margin-top: 150px;
 	display: flex;
 	flex-direction: column;
 	
@@ -117,7 +106,6 @@ header {
 		line-height: 1em;
 		color: $grey;
 		margin: 15px 0;
-//		white-space: nowrap;
 	}
 	.content > img {
 		max-height: 250px;
@@ -137,6 +125,10 @@ header {
 		margin: 15px 0;
 		padding-bottom: 15px;
 		
+		@include respond-to(phones) {
+			font-size: 1em;
+		}
+		
 		& > * {
 			display: inline;			
 		}
@@ -153,12 +145,12 @@ header {
 
 			&:first-child {
 				font-family: $title-font;
-				font-size: 5.5em;
+				font-size: 4.8em;
 				color: $grey;
 				float: left;
-				width: 70px;
+//				width: 70px;
 				line-height: 0.9em;
-				margin: 0 5px;
+				margin: 0 10px 0 0;
 				text-align: center;
 			}
 			&:last-child {
@@ -203,6 +195,24 @@ header {
 				width: 100%;
 			}
 		}
+		.smaller-on-mobile {
+			@include respond-to(phones) {
+				display: block;
+				margin: auto;
+				width: 60%;
+			}
+		}
+	}
+	.no-float {
+		display: block;
+		margin: auto;
+		width: 100%;
+	}
+	.img-border {
+		border: 2px solid #eee;
+	}
+	.img-top-margin {
+		margin-top: 15px;
 	}
 }
 

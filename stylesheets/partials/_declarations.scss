@@ -12,7 +12,7 @@ $breakpoint-medium: "only screen and (min-width: " + $tablet-width + "px) and (m
 
 $grey: #555;
 $darkgrey: #222;
-$page-bg-color: #f5f5f5;
+$page-bg-color: #f8f8f8;
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
@@ -28,16 +28,6 @@ $page-bg-color: #f5f5f5;
     100% { 
         transform: translateX(0);
         opacity: 1; 
-    }
-}
-
-@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
-    @while $i > 0 {
-        &:nth-of-type(#{$i}) {
-            -webkit-animation-delay: $initial-delay + $stagger-delay * $i;
-            animation-delay: $initial-delay + $stagger-delay * $i;
-        }
-        $i: $i - 1;
     }
 }
 

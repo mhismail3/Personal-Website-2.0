@@ -106,7 +106,6 @@ jQuery(document).ready(function($) {
 		if (window.matchMedia('(max-width: 600px)').matches) {
 			$(this).animateCss('fadeInUp');
 		} else {
-//			$(this).find('.description').setAnimationDuration( 1.2, -.3);
 			$(this).find('.description').setAnimationDuration( 1.2, -.2, 'secondary');
         	$(this).animateCssStages("fadeInUp");
 		}  
