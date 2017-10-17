@@ -131,6 +131,15 @@ header {
       header #header-content {
         margin: auto auto 80px;
         text-align: inherit; } }
+@-moz-document url-prefix() {
+  header #header-content {
+    margin: 140px auto auto; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      header #header-content {
+        margin: 140px auto auto; } }
+    @supports (-ms-accelerator: true) {
+      header #header-content {
+        margin: 140px auto auto; } }
     header #header-content > *:not(:first-child) {
       margin: 10px 0; }
     header #header-content .img-circle {

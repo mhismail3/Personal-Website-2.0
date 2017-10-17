@@ -54,6 +54,15 @@ header {
 			margin: auto auto 80px;
 			text-align: inherit;
 		}
+		@-moz-document url-prefix() {
+			margin: 140px auto auto;
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			margin: 140px auto auto;
+		}
+		@supports (-ms-accelerator:true) {
+			margin: 140px auto auto;
+		}
 		
         & > *:not(:first-child) {
             margin: 10px 0;
