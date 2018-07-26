@@ -281,10 +281,10 @@ header {
       background-size: 100%; } }
 
 #experience {
-  height: 1000px; }
+  height: 1010px; }
   @media only screen and (max-width: 750px) {
     #experience {
-      height: 530px;
+      height: 570px;
       margin-bottom: 80px; } }
   #experience .skills {
     width: 85%;
@@ -481,6 +481,9 @@ header {
     background-size: cover; }
   #projects .wrapper #introversed-portfolio-theme-1 .project-img {
     background: url(../images/introversed-portfolio-theme-1.png);
+    background-size: cover; }
+  #projects .wrapper #space-invaders-project .project-img {
+    background: url(../images/spaceinvaders-gameplay.png);
     background-size: cover; }
 
 #get-in-touch .wrapper {

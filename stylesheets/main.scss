@@ -260,10 +260,10 @@ header {
 
 
 #experience {
-	height: 1000px;
+	height: 1010px;
 
 	@include respond-to(phones) {
-		height: 530px;
+		height: 570px;
 		margin-bottom: 80px;
 	}
 	
@@ -498,6 +498,12 @@ header {
 		#introversed-portfolio-theme-1 {
 			.project-img {
 				background: url(../images/introversed-portfolio-theme-1.png);
+				background-size: cover;
+			}
+		}
+        #space-invaders-project {
+			.project-img {
+				background: url(../images/spaceinvaders-gameplay.png);
 				background-size: cover;
 			}
 		}
